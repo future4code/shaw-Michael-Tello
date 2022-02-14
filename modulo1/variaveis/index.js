@@ -47,7 +47,8 @@ console.log(`${question1} - SIM`);
 console.log(`${question2} - NAO`);
 console.log(`${question3} - NAO`); */
 
-let a = 10;
+3; //
+/* let a = 10;
 let b = 25;
 let c = a;
 
@@ -55,4 +56,21 @@ a = b;
 b = c;
 
 console.log("O novo valor de a é", a); // O novo valor de a é 25
-console.log("O novo valor de b é", b); // O novo valor de b é 10
+console.log("O novo valor de b é", b); // O novo valor de b é 10 */
+
+// Desafios
+1; //
+/* const num1 = prompt("Digite o 1º numero")
+const num2 = prompt("Digite o 2º numero")
+const convertNumber1 = Number(num1)
+const convertNumber2 = Number(num2)
+ const x = convertNumber1 + convertNumber2
+console.log(x) */
+
+2; //
+/* const num1 = prompt("Digite o 1º numero");
+const num2 = prompt("Digite o 2º numero");
+const convertNumber1 = Number(num1);
+const convertNumber2 = Number(num2);
+const x = convertNumber1 * convertNumber2
+console.log(x)  */
