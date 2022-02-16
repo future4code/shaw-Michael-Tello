@@ -54,3 +54,31 @@ console.log(`${comidas}`) */
 
 // f.
 // console.log(array)
+
+//ANCHOR Desafios
+
+//  1. 
+/* const frase = "O rato roeu a roupa";
+const space = frase.replaceAll(" ", "");
+console.log(space)
+console.log( space[0] )
+console.log( space[1] )
+console.log( space[2] )
+console.log( space[3] )
+console.log( space[4] )
+console.log( space[5] )
+console.log( space[6] )
+console.log( space[7] )
+console.log( space[8] )
+console.log( space[9] )
+console.log( space[10] )
+console.log( space[11] )
+console.log( space[12] )
+console.log( space[13] )
+console.log( space[14] ) */
+
+// 2.
+const array = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
+const indice = 2
+console.log(array[indice],array.length)
+
