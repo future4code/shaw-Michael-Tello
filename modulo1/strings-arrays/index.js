@@ -57,7 +57,7 @@ console.log(`${comidas}`) */
 
 //ANCHOR Desafios
 
-//  1. 
+//  1.
 /* const frase = "O rato roeu a roupa";
 const space = frase.replaceAll(" ", "");
 console.log(space)
@@ -78,7 +78,10 @@ console.log( space[13] )
 console.log( space[14] ) */
 
 // 2.
-const array = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"]
-const indice = 2
-console.log(array[indice],array.length)
-
+/* const array = ["Banana", "Morango", "Abacaxi", "Laranja", "Ameixa"];
+const indice = array.find((element) => element === "Abacaxi");
+let elemento = "Abacaxi";
+let idx = array.indexOf(elemento);
+console.log(`indice: ${indice}
+length: ${array.length}
+`); */
