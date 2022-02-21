@@ -1,2 +1,1 @@
- // const arrayLast= array.push(array.splice(array[array.length - 1,1])[0]);
-  // console.log(arrayLast)
+Deve ser renovada de 5 em 5 anos `

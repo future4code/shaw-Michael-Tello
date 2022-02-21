@@ -117,17 +117,51 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
   return areEqual;
 }
 
-// EXERCÍCIO 13
+//TODO EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
+  const anoAtual = Number(prompt("Ano atual"));
+  const anoNascimento = Number(prompt("Ano Nascimento"));
+  const anoRg = Number(prompt("Ano Rg"));
+
+  const idade = anoAtual - anoNascimento; // 2020 - 1993 = 29
+  const renova = anoAtual - anoRg;
+
+  // const diferenca = anoAtual - anoRg; // 2020 - 2010 = 10
+  // const renova = idade - diferenca; // 29 - 10 = 19
+
+  if (idade <= 20 && renova === 5) {
+    console.log(true);
+  } else if ((idade > 20 && idade <= 50) && renova === 10) {
+    console.log(true);
+  } else if (idade > 50) {
+    console.log(true);
+  } else {
+    console.log(false);
+  }
 }
+console.log(checaRenovacaoRG())
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
+  if (ano % 400 == 0) return true;
+  else if (ano % 4 === 0 && ano % 100 != 0) return true;
+  else return false;
 }
 
 // EXERCÍCIO 15
 function checaValidadeInscricaoLabenu() {
   // implemente sua lógica aqui
+
+  const ofAge = prompt("Você tem mais de 18 anos?");
+  const highSchool = prompt("Você possui ensino médio completo?");
+  const availableCourses = prompt(
+    "Você possui disponibilidade exclusiva durante os horários do curso?"
+  );
+
+  if (ofAge === "sim" && highSchool === "sim" && availableCourses === "sim")
+    console.log(true);
+  else console.log(false);
 }
+// console.log(checaValidadeInscricaoLabenu());
