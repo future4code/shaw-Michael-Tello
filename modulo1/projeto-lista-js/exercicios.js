@@ -120,27 +120,20 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
 //TODO EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-  const anoAtual = Number(prompt("Ano atual"));
-  const anoNascimento = Number(prompt("Ano Nascimento"));
-  const anoRg = Number(prompt("Ano Rg"));
+  const anoAtual = Number(prompt("Digite o ano atual"))
+  const anoNascimento = Number(prompt("Digite o ano de nascimento"))
+  const anoEmissao = Number(prompt("Digite o ano de emissão do documento"))
 
-  const idade = anoAtual - anoNascimento; // 2020 - 1993 = 29
-  const renova = anoAtual - anoRg;
+  const idade = anoAtual - anoNascimento
+  const tempoCarteira = anoAtual - anoEmissao
 
-  // const diferenca = anoAtual - anoRg; // 2020 - 2010 = 10
-  // const renova = idade - diferenca; // 29 - 10 = 19
+  const cond1 = idade <= 20 && tempoCarteira >= 5
+  const cond2 = idade > 20 && idade <= 50 && tempoCarteira >= 10
+  const cond3 = idade > 50 && tempoCarteira >= 15
 
-  if (idade <= 20 && renova === 5) {
-    console.log(true);
-  } else if ((idade > 20 && idade <= 50) && renova === 10) {
-    console.log(true);
-  } else if (idade > 50) {
-    console.log(true);
-  } else {
-    console.log(false);
-  }
+  console.log(cond1 || cond2 || cond3)
 }
-console.log(checaRenovacaoRG())
+
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
