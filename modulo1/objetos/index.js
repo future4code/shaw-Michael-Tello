@@ -1,4 +1,4 @@
-// Interpretação de código
+//ANCHOR Interpretação de código
 
 // 1. a
 /* Matheus Nachtergaele
@@ -25,7 +25,7 @@ undefined
 false
 undefined */
 
-// Escrita de código
+//ANCHOR Escrita de código
 // 1 a
 const pessoa = {
   nome: "Amanda",
@@ -93,3 +93,5 @@ function objetoFruta(frutaSacolao1, frutaSacolao2, frutaSacolao3) {
 }
 
 objetoFruta(frutaSacolao1, frutaSacolao2, frutaSacolao3);
+
+//ANCHOR Desafios
