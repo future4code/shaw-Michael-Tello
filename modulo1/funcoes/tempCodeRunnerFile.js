@@ -1,1 +1,1 @@
-// Eu sou [NOME], tenho [IDADE] anos, moro em [ENDEREÇO] e sou [PROFISSÃO].
+console.log(soma);

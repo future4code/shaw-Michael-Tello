@@ -69,11 +69,26 @@ console.log(par(11)); */
 console.log(message())	 */
 
 // 3.
-const sum = (a, b) => `Soma: ${a + b}`;
+/* const sum = (a, b) => `Soma: ${a + b}`;
 const subtraction = (a, b) => `Diferença: ${a - b}`;
 const multiplication = (a, b) => `Multiplicação: ${a * b}`;
 const division = (a, b) => `Divisão: ${a / b}`;
 console.log(sum(30, 3));
 console.log(subtraction(30, 3));
 console.log(multiplication(30, 3));
-console.log(division(30, 3));
+console.log(division(30, 3)); */
+
+// Desafios
+
+// 1. a
+/*  const teste = (parameter) =>{
+return parameter
+      }
+      console.log('Ola World')  */
+
+// b.
+const teste2 = (parameter1, parameter2) => {
+  const soma = parameter1 + parameter2;
+  console.log(soma);
+};
+teste2(2, 4);
