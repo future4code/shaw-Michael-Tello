@@ -81,15 +81,13 @@ const frutaSacolao3 = {
   nome: "Tadeu",
   disponivel: true,
 };
-function objetoFruta(frutaSacolao1, frutaSacolao2, frutaSacolao3) {
-  const newFruta = {
-    ...frutaSacolao1,
-    frutaSacolao2,
-    frutaSacolao3,
-  };
-  cart = [newFruta];
-  const convertArray = Object.values(cart);
-  console.log(convertArray);
+function objetoFruta(parametro) {
+  // console.log(parametro);
+  // const copiaLista = { ...parametro };
+  
+  const newCart = cart.push({prodName: 'product 1'});
+  // const empurre = cart.push(parametro)
+  console.log(newCart);
 }
 
-objetoFruta(frutaSacolao1, frutaSacolao2, frutaSacolao3);
+objetoFruta(frutaSacolao1);
