@@ -78,10 +78,17 @@ const produtos = [
 console.log(nomesProdutos) */
 
 // b.
-/* const descontos = produtos.map((produto) => {
+const descontos2 = produtos.filter((produto) => {
+  return {
+    nome: produto.nome.toUpperCase(),
+    produto: (produto.preco * 0.95).toFixed(2),
+  };
+});
+console.log(descontos2);
+
+/* const descontos = produtos.filter((produto) => {
   if (produto.preco) {
-    return
-   nome: produto.nome, (produto.preco * 0.95).toFixed(2);
+    console.log(produto.nome, (produto.preco * 0.95).toFixed(2));
   }
 }); */
 
@@ -124,5 +131,5 @@ const pokemons = [
 console.log(pokemons.sort(compare)); */
 
 // b.
-const itemB = [...new Set(pokemons.map((pokemon) => pokemon.tipo))];
-console.log(itemB);
+/* const itemB = [...new Set(pokemons.map((pokemon) => pokemon.tipo))];
+console.log(itemB); */
