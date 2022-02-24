@@ -78,12 +78,12 @@ const produtos = [
 console.log(nomesProdutos) */
 
 // b.
-/* const descontos = produtos.filter((produto) => {
+/* const descontos = produtos.map((produto) => {
   if (produto.preco) {
-    console.log(produto.nome, produto.preco * 0.5);
+    return
+   nome: produto.nome, (produto.preco * 0.95).toFixed(2);
   }
-});
-console.log(descontos); */
+}); */
 
 // c.
 /* const bebidas = produtos.filter((bebida)=>{
@@ -98,10 +98,31 @@ console.log(bebidas);  */
 console.log(limpezas); */
 
 // e.
-const frases = produtos.filter((frase) => {
+/* const frases = produtos.filter((frase) => {
   if (frase.nome.includes("Ypê")) {
     console.log(`Compre ${frase.nome} por ${frase.preco}`);
   }
-});
+}); */
 
 //ANCHOR Desafios
+
+// 1.
+const pokemons = [
+  { nome: "Bulbasaur", tipo: "grama" },
+  { nome: "Bellsprout", tipo: "grama" },
+  { nome: "Charmander", tipo: "fogo" },
+  { nome: "Vulpix", tipo: "fogo" },
+  { nome: "Squirtle", tipo: "água" },
+  { nome: "Psyduck", tipo: "água" },
+];
+// a.
+/* function compare(a, b) {
+  if (a.nome < b.nome) return -1;
+  if (a.nome > b.nome) return 1;
+  return 0;
+}
+console.log(pokemons.sort(compare)); */
+
+// b.
+const itemB = [...new Set(pokemons.map((pokemon) => pokemon.tipo))];
+console.log(itemB);
