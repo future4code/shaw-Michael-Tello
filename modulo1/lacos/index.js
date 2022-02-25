@@ -1,5 +1,5 @@
 // 1. a.
-const bichinhos = Number(prompt("quantos bichinhos de estimação você tem?"));
+/* const bichinhos = Number(prompt("quantos bichinhos de estimação você tem?"));
 console.log(bichinhos);
 if (bichinhos === 0) {
   console.log("Que pena! Você pode adotar um pet!");
@@ -12,7 +12,7 @@ else {
   }
   // c.
   console.log(arrayBichinhos);
-}
+} */
 
 // 2. a
 /* function numeros() {
@@ -54,14 +54,16 @@ numeros(); */
 }
 numeros(); */
 
-// e. TODO
+// e.
 
 function numeros() {
   const arrays = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55];
-  for (const array of arrays) {
-    if (array > arrays) {
-      console.log(array);
-    }
-  }
+  var min = Math.min(...arrays);
+  var max = Math.max(...arrays);
+  console.log(`O maior número é ${max} e o menor é ${min}`);
 }
 numeros();
+
+// Desafio
+
+
