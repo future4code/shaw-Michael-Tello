@@ -11,7 +11,7 @@
         </aside>
     c) Por fim, imprima o array com os nomes dos bichinhos no console */
 
-/* const bichos = Number(prompt("Qts pets voce tem?"));
+const bichos = Number(prompt("Qts pets voce tem?"));
 if (bichos === 0) {
   console.log("Que pena! Você pode adotar um pet!");
 } else {
@@ -19,7 +19,7 @@ if (bichos === 0) {
   for (let bichos = 0; bichos < nomePets.length; bichos++) {
     nomePets.push(bichos[i]);
   }
-} */
+}
 
 /* let nomePets = [];
 let i = 0;
@@ -33,7 +33,7 @@ while (i < nomePets.length) {
 
 // 2. a
 /* function numeros() {
-  const arrays = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+ const arrays = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
   for (const array of arrays) {
     console.log(array);
   }
@@ -42,21 +42,19 @@ numeros(); */
 
 // b.
 /* function numeros() {
-  const arrays = [10, 14, 30, 18, 28, 87, 50, 22];
+  const arrays = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55];
   for (const array of arrays) {
-    if (array % 10 === 0) {
-      console.log(array);
-    }
+    console.log(array / 10);
   }
 }
 numeros(); */
 
 // c.
 /* function numeros() {
-  const arrays = [10, 14, 30, 11, 22, 87, 50, 22];
-  for (const array of arrays) {
-    if (array % 2 === 0) {
-      console.log(array);
+  const arrays = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55]
+  for (const arr of arrays) {
+    if (arr % 2 === 0) {
+      console.log(arr);
     }
   }
 }
@@ -71,14 +69,12 @@ numeros(); */
 }
 numeros(); */
 
-// e. TODO
-
-function numeros() {
+// e. 
+/* function numeros() {
   const arrays = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55];
-  for (const array of arrays) {
-    if (array > arrays) {
-      console.log(array);
-    }
-  }
+  const maior = Math.max.apply(Math, arrays);
+  const menor = Math.min.apply(Math, arrays);
+  console.log(`Maior: ${maior}`)
+  console.log(`Menor: ${menor}`)
 }
-numeros();
+numeros(); */
