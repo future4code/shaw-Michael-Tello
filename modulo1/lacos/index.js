@@ -1,35 +1,18 @@
-/* TODO 1. Pergunte ao usuário quantos bichinhos de estimação ele tem e guarde esse dado em uma variável. 
-    
-    a) Se a quantidade for 0, imprima no console "Que pena! Você pode adotar um pet!"
-	
-    b) Se a quantidade for maior que 0, solicite que o usuário digite os nomes deles, um por um, e guarde esses nomes em um array
-    
-    - 💡 Dica
-        <aside>
-        ⭐ Coloque o seu prompt dentro de um loop. Esse loop deve ser executado a mesma quantidade de vezes que o usuário inseriu. Por exemplo: se o usuário tem 4 pets, ele deve conseguir inserir 4 nomes.
-        
-        </aside>
-    c) Por fim, imprima o array com os nomes dos bichinhos no console */
-
-/* const bichos = Number(prompt("Qts pets voce tem?"));
-if (bichos === 0) {
+// 1. a.
+const bichinhos = Number(prompt("quantos bichinhos de estimação você tem?"));
+console.log(bichinhos);
+if (bichinhos === 0) {
   console.log("Que pena! Você pode adotar um pet!");
-} else {
-  let nomePets = prompt("Digite o nome dos pets um por um: ");
-  for (let bichos = 0; bichos < nomePets.length; bichos++) {
-    nomePets.push(bichos[i]);
+}
+// b.
+else {
+  let arrayBichinhos = [];
+  for (let i = 0; i < bichinhos; i++) {
+    arrayBichinhos.push(prompt("diga o nome do seu bichinho"));
   }
-} */
-
-/* let nomePets = [];
-let i = 0;
-while (i < nomePets.length) {
-  let novoItem = "O elemento " + i.toString() + " é ";
-  novoItem += nomePets[i].toString();
-  nomePets.push(novoItem);
-  i++;
-  console.log(novoItem);
-} */
+  // c.
+  console.log(arrayBichinhos);
+}
 
 // 2. a
 /* function numeros() {
