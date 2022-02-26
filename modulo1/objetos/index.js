@@ -27,7 +27,7 @@ undefined */
 
 //ANCHOR Escrita de código
 // 1 a
-const pessoa = {
+/* const pessoa = {
   nome: "Amanda",
   apelidos: ["Amandinha", "Mandinha", "Mandi"],
 };
@@ -48,10 +48,10 @@ function newFrase() {
     `Eu sou ${newPessoa.nome}, mas pode me chamar de: ${newPessoa.apelidos[0]}, ${newPessoa.apelidos[1]} ou ${newPessoa.apelidos[2]}`
   );
 }
-newFrase();
+newFrase(); */
 
 // 2.
-const pessoa1 = {
+/* const pessoa1 = {
   nome: "Bruno",
   idade: 23,
   profissao: "Instrutor",
@@ -65,33 +65,67 @@ function minhaFuncao(pessoa1, pessoa2) {
   console.log(Object.values(pessoa1));
   console.log(Object.values(pessoa2));
 }
-minhaFuncao(pessoa1, pessoa2);
+minhaFuncao(pessoa1, pessoa2); */
 
 // 3.
-var cart = [];
-const frutaSacolao1 = {
-  nome: "Marco",
-  disponivel: true,
+const carrinho = [];
+const abacaxi = {
+  nome: "abacaxi",
+  disponibilidade: true,
 };
-const frutaSacolao2 = {
-  nome: "Marcia",
-  disponivel: true,
+const melancia = {
+  nome: "melancia",
+  disponibilidade: true,
 };
-const frutaSacolao3 = {
-  nome: "Tadeu",
-  disponivel: true,
+const tomate = {
+  nome: "tomate",
+  disponibilidade: true,
 };
-function objetoFruta(frutaSacolao1, frutaSacolao2, frutaSacolao3) {
-  const newFruta = {
-    ...frutaSacolao1,
-    frutaSacolao2,
-    frutaSacolao3,
-  };
-  cart = [newFruta];
-  const convertArray = Object.values(cart);
-  console.log(convertArray);
+
+function adicionaFrutaNoCarrinho(fruta) {
+  carrinho.push(fruta);
 }
+adicionaFrutaNoCarrinho(abacaxi);
+adicionaFrutaNoCarrinho(melancia);
+adicionaFrutaNoCarrinho(tomate);
 
-objetoFruta(frutaSacolao1, frutaSacolao2, frutaSacolao3);
+console.log(carrinho);
 
-//ANCHOR Desafios
+//TODO Desafios
+//  1.
+/* const question = () => {
+  const person = {
+    name: prompt("Nome: "),
+    age: prompt("Idade: "),
+    profession: prompt("Profissao: "),
+  };
+  console.log(person);
+  console.log(typeof person);
+};
+question(); */
+
+//  2.
+/* const movies = () => {
+  const movie1 = {
+    nome: "O albergue",
+    anoLancamento: 1993,
+  };
+  const movie2 = {
+    nome: "O albergue",
+    anoLancamento: 2022,
+  };
+
+  if (movie1.anoLancamento < movie2.anoLancamento) {
+    return `O primeiro filme foi lançado antes do segundo ${false}`;
+  } else if (movie1.anoLancamento === movie2.anoLancamento) {
+    return `O primeiro filme foi lançado no mesmo ano do segundo ${false}`;
+  }
+};
+console.log(movies()); */
+
+// 3.
+function inverte(fruta) {
+  return { ...fruta, disponibilidade: !fruta.disponibilidade };
+}
+console.log(inverte(abacaxi));
+// console.log(inverte(inverte(abacaxi)))
