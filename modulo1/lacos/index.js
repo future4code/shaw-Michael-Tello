@@ -1,5 +1,9 @@
 // 1. a.
+<<<<<<< HEAD
 /* const bichinhos = Number(prompt("quantos bichinhos de estimação você tem?"));
+=======
+const bichinhos = Number(prompt("quantos bichinhos de estimação você tem?"));
+>>>>>>> lacos
 console.log(bichinhos);
 if (bichinhos === 0) {
   console.log("Que pena! Você pode adotar um pet!");
@@ -12,7 +16,11 @@ else {
   }
   // c.
   console.log(arrayBichinhos);
+<<<<<<< HEAD
 } */
+=======
+}
+>>>>>>> lacos
 
 // 2. a
 /* function numeros() {
