@@ -56,14 +56,56 @@ numeros(); */
 
 // e.
 
-function numeros() {
+/* function numeros() {
   const arrays = [80, 30, 130, 40, 60, 21, 70, 120, 90, 103, 110, 55];
   var min = Math.min(...arrays);
   var max = Math.max(...arrays);
   console.log(`O maior número é ${max} e o menor é ${min}`);
 }
-numeros();
+numeros(); */
 
 // Desafio
+// 1.
+/* console.log("Vamos jogar!");
+let acertou = false;
+let tentativas = 0;
+let player1Choice = Number(prompt("Jogador 1 - Escolha um numero: "));
 
+while (!acertou) {
+  let player2Kick = Number(prompt("Jogador 2 - Chute um numero: "));
+  tentativas++;
+  console.log(`O número chutado foi: ${player2Kick}`);
 
+  if (player2Kick > player1Choice) {
+    console.log(`Errou. O número escolhido é maior`);
+  } else if (player2Kick < player1Choice) {
+    console.log(`Errou. O número escolhido é menor`);
+  } else {
+    console.log(`Acertou. O número de tentativas foi : ${tentativas}`);
+    acertou = true;
+  }
+} */
+
+// 2.
+/* console.log("Vamos jogar!");
+
+const numeroEscolhido = Math.floor(Math.random() * 3);
+
+let acertou = false;
+let tentativas = 0;
+
+while (!acertou) {
+  alert("Acerte o numero de 1 a 3!");
+  let numeroChutado = Number(prompt(`Chute um número: `));
+  tentativas++;
+  console.log(`O número chutado foi: ${numeroChutado}`);
+  if (numeroChutado === numeroEscolhido) {
+    console.log("Acertou!");
+    console.log(`O número de tentativas foi : ${tentativas}`);
+    acertou = true;
+  } else if (numeroEscolhido > numeroChutado) {
+    console.log("Errou. O número escolhido é maior");
+  } else {
+    console.log("Errou. O número escolhido é menor");
+  }
+} */
