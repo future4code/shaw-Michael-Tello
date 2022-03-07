@@ -100,15 +100,16 @@ function retornaUltimoElemento(array) {
 // EXERCÍCIO 11
 function trocaPrimeiroEUltimo(array) {
   // implemente sua lógica aqui
-  const arrayLast = array[array.length - 1];
-  const arrayFirst = array[0];
-  const ultimo = array.pop();
-  var primeiro = array.shift();
+  const arrayFirst = retornaPrimeiroElemento(array);
+  const arrayLast = retornaUltimoElemento(array);
+  array[0] = arrayLast;
+  array[array.length - 1] = arrayFirst;
+  /*  array.pop();
+  array.shift();
   array.unshift(arrayLast);
-  array.push(arrayFirst);
+  array.push(arrayFirst); */
   return array;
 }
-console.log(trocaPrimeiroEUltimo([1, 2, 3, 4]));
 
 // EXERCÍCIO 12
 function checaIgualdadeDesconsiderandoCase(string1, string2) {
@@ -117,29 +118,27 @@ function checaIgualdadeDesconsiderandoCase(string1, string2) {
   return areEqual;
 }
 
-//TODO EXERCÍCIO 13
+// EXERCÍCIO 13
 function checaRenovacaoRG() {
   // implemente sua lógica aqui
-  const anoAtual = Number(prompt("Digite o ano atual"))
-  const anoNascimento = Number(prompt("Digite o ano de nascimento"))
-  const anoEmissao = Number(prompt("Digite o ano de emissão do documento"))
+  const anoAtual = Number(prompt("Digite o ano atual"));
+  const anoNascimento = Number(prompt("Digite o ano de nascimento"));
+  const anoEmissao = Number(prompt("Digite o ano de emissão do documento"));
 
-  const idade = anoAtual - anoNascimento
-  const tempoCarteira = anoAtual - anoEmissao
+  const idade = anoAtual - anoNascimento;
+  const tempoCarteira = anoAtual - anoEmissao;
 
-  const cond1 = idade <= 20 && tempoCarteira >= 5
-  const cond2 = idade > 20 && idade <= 50 && tempoCarteira >= 10
-  const cond3 = idade > 50 && tempoCarteira >= 15
+  const cond1 = idade <= 20 && tempoCarteira >= 5;
+  const cond2 = idade > 20 && idade <= 50 && tempoCarteira >= 10;
+  const cond3 = idade > 50 && tempoCarteira >= 15;
 
-  console.log(cond1 || cond2 || cond3)
+  console.log(cond1 || cond2 || cond3);
 }
-
 
 // EXERCÍCIO 14
 function checaAnoBissexto(ano) {
   // implemente sua lógica aqui
-  if (ano % 400 == 0) return true;
-  else if (ano % 4 === 0 && ano % 100 != 0) return true;
+  if (ano % 400 == 0 || (ano % 4 === 0 && ano % 100 != 0)) return true;
   else return false;
 }
 
@@ -157,4 +156,3 @@ function checaValidadeInscricaoLabenu() {
     console.log(true);
   else console.log(false);
 }
-// console.log(checaValidadeInscricaoLabenu());
