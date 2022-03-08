@@ -25,12 +25,15 @@ function retornaNumerosPares(array) {
 // TODO
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-  /* 	for (const arr of array) {
-		if (arr % 2 === 0) {
-			return Math.pow(arr, 2);
-		}
-} */
+  let resultado = 0;
+
+  for (let i = 0; i < array; i++) {
+    if (array % 2 === 0) {
+      return Math.pow(array, 2);
+    }
+  }
 }
+
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
   return Math.max(...array);
@@ -40,16 +43,38 @@ function retornaMaiorNumero(array) {
 function retornaObjetoEntreDoisNumeros(num1, num2) {}
 
 // EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {}
+function retornaNPrimeirosPares(n) {
+  let numerosPares = [];
+  for (let i = 0; numerosPares.length < n; i += 2) {
+    numerosPares.push(i);
+  }
+  return numerosPares;
+}
 
 // EXERCÍCIO 09
-function classificaTriangulo(ladoA, ladoB, ladoC) {}
+function classificaTriangulo(ladoA, ladoB, ladoC) {
+  if (ladoA === ladoB && ladoA === ladoC) {
+    return "Equilátero";
+  } else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+    return "Isósceles";
+  } else if (ladoA != ladoB && ladoA != ladoC && ladoB != ladoC) {
+    return "Escaleno";
+  }
+}
 
 // EXERCÍCIO 10
 function retornaSegundoMaiorESegundoMenor(array) {}
 
 // EXERCÍCIO 11
-function retornaChamadaDeFilme(filme) {}
+function retornaChamadaDeFilme(filme) {
+  filme = {
+    nome: "O Diabo Veste Prada",
+    ano: 2006,
+    diretor: "David Frankel",
+    atores: ["Meryl Streep", "Anne Hathaway", "Emily Blunt", "Stanley Tucci"],
+  };
+  return `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por ${filme.atores}.`;
+}
 
 // EXERCÍCIO 12
 function retornaPessoaAnonimizada(pessoa) {}
