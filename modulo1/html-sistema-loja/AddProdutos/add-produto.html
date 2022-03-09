@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Adicionar Produto</title>
+    <link rel="stylesheet" href="../style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="../Home/index.html">Página Inicial</a>
+      <a href="../CtrlEstoque/ctrl-estoque.html">Controle de Estoque</a>
+      <a href="../AddProdutos/add-produto.html">Adicionar Produto</a>
+      <a href="../Funcionarios/funcionarios.html">Funcionários</a>
+    </nav>
+
+    <div id="row">
+      <section>
+        <img src="../img/frutaria.png" alt="frutaria" class="frutaria" />
+        <h1 class="title">Adicionar Produto</h1>
+        <div class="text">
+          <form action="#">
+            <div>
+              <label for="link-foto">Link para foto: </label>
+              <input type="url" id="link-foto" name="link-foto" />
+            </div>
+            <div>
+              <label for="descricao">Descrição do produto: </label>
+              <input type="text" id="descrição" name="descrição" />
+            </div>
+            <div>
+              <label for="preco">Preço (em R$): </label>
+              <input type="number" id="preço" name="preço" />
+            </div>
+
+            <div>
+              <label for="quantidade">Quantidade disponível: </label>
+              <input type="number" id="qtd" name="qtd" />
+            </div>
+
+            <div class="form-add">
+              <button type="submit">Adicionar</button>
+            </div>
+          </form>
+        </div>
+      </section>
+    </div>
+
+    <footer>
+      <img src="https://img.icons8.com/fluency/48/000000/instagram-new.png" />
+      <img src="https://img.icons8.com/fluency/48/000000/facebook.png" />
+      <img src="https://img.icons8.com/color/48/000000/youtube-play.png" />
+    </footer>
+  </body>
+</html>
