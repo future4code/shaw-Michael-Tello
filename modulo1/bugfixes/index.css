@@ -8,7 +8,7 @@
 * {
   margin: 0;
   padding: 0;
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
 }
 
 h2 {
@@ -111,8 +111,13 @@ div:last-child {
 }
 
 table {
-  text-align: center;
-  width: 60%;
+  display: flex;
+  justify-content: center;
+  flex-grow: 3;
+}
+
+td {
+  width: 100px;
 }
 
 td button {
@@ -136,6 +141,15 @@ td button {
   border-radius: 5px;
   font-size: 10px;
   color: black;
+  background-color: #c44f00;
+  position: relative;
+  top: 7em;
+  left: 62em;
+}
+
+#back-button a {
+  text-decoration: none;
+  color: white;
 }
 
 #back-button:hover {
