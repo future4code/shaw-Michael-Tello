@@ -17,6 +17,10 @@ h2 {
 }
 
 input {
+    
+    border:  none;
+    border-bottom: 2px solid ;
+   
   height: 20px;
   width: 500px;
 }
@@ -119,6 +123,7 @@ td button {
 }
 
 .container-do-search {
+   
   margin-top: 20px;
   height: 100px;
 }
