@@ -22,37 +22,76 @@ function retornaArrayOrdenado(array) {
 function retornaNumerosPares(array) {
   return array.filter((e) => e % 2 === 0);
 }
-// TODO
+
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
-  /* 	for (const arr of array) {
-		if (arr % 2 === 0) {
-			return Math.pow(arr, 2);
-		}
-} */
+
 }
+
 // EXERCÍCIO 06
 function retornaMaiorNumero(array) {
   return Math.max(...array);
 }
 
+// TODO
 // EXERCÍCIO 07
-function retornaObjetoEntreDoisNumeros(num1, num2) {}
+function retornaObjetoEntreDoisNumeros(num1, num2) {
+}
 
 // EXERCÍCIO 08
-function retornaNPrimeirosPares(n) {}
-
+function retornaNNumerosPares(n) {
+  /* let numerosPares = [];
+  for (let i = 0; numerosPares.length < n; i += 2) {
+    numerosPares.push(i);
+  }
+  return numerosPares; */
+}
 // EXERCÍCIO 09
-function classificaTriangulo(ladoA, ladoB, ladoC) {}
-
+function classificaTriangulo(ladoA, ladoB, ladoC) {
+  if (ladoA === ladoB && ladoA === ladoC) {
+    return "Equilátero"
+  } else if (ladoA === ladoB || ladoA === ladoC || ladoB === ladoC) {
+    return "Isósceles"
+  } else if (ladoA != ladoB && ladoA != ladoC && ladoB != ladoC) {
+    return "Escaleno"
+  } 
+}
 // EXERCÍCIO 10
-function retornaSegundoMaiorESegundoMenor(array) {}
+function retornaSegundoMaiorESegundoMenor(array) {
+
+}
 
 // EXERCÍCIO 11
-function retornaChamadaDeFilme(filme) {}
+function retornaChamadaDeFilme(filme) {
+
+}
 
 // EXERCÍCIO 12
-function retornaPessoaAnonimizada(pessoa) {}
+function retornaPessoaAnonimizada(pessoa) {
+  let novoUsuario = {
+    ...pessoa,
+    nome: "ANÔNIMO"
+  }
+  return novoUsuario
+}
+
+
+ /*  const novoUsuario = {
+    ...pessoa,
+    nome: "ANÔNIMO"
+  }
+  return novoUsuario */
+
+
+
+
+/*  const result = pessoa.map((user)=>({
+...user,
+nome: "ANÔNIMO"
+}));
+return result
+ } */
+
 
 // EXERCÍCIO 13A
 function retornaPessoasAutorizadas(pessoas) {}
