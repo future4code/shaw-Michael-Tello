@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap");
 /** 
   *
   *  ESTILOS GERAIS 
@@ -7,6 +8,7 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 h2 {
@@ -17,10 +19,9 @@ h2 {
 }
 
 input {
-    
-    border:  none;
-    border-bottom: 2px solid ;
-   
+  border: none;
+  border-bottom: 2px solid;
+
   height: 20px;
   width: 500px;
 }
@@ -123,7 +124,6 @@ td button {
 }
 
 .container-do-search {
-   
   margin-top: 20px;
   height: 100px;
 }
