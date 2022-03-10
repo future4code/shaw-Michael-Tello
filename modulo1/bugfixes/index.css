@@ -59,6 +59,11 @@ div img {
   color: white;
 }
 
+.botao-amarelo a {
+  text-decoration: none;
+  color: white;
+}
+
 .botao-amarelo:hover {
   background-color: #c44f00;
 }
@@ -79,10 +84,12 @@ div img {
   **/
 
 #container-de-descricao {
-  margin-top: 2em;
+  padding-top: 6em;
   background-color: #2274a5;
   color: white;
 }
+
+
 
 #container-de-descricao > ol {
   padding: 15px 0px;
