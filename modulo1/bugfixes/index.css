@@ -26,12 +26,11 @@ button:focus {
 }
 
 img {
-  width: 100px;
+  height: 50px;
 }
 
 div > p:first-child {
   display: inline;
-  
 }
 
 div img {
@@ -67,19 +66,14 @@ div img {
   **/
 
 #container-de-descricao {
-   
-    margin-top: 2em;
+  margin-top: 2em;
   background-color: #2274a5;
   color: white;
- 
 }
 
 #container-de-descricao > ol {
   padding: 15px 0px;
- 
 }
-
-
 
 #container-para-comprar {
   background-color: #e7eb90;
@@ -101,11 +95,10 @@ div img {
 div:nth-child(2),
 div:last-child {
   text-align: center;
-
 }
 
 table {
-    text-align: center;
+  text-align: center;
   width: 60%;
 }
 
