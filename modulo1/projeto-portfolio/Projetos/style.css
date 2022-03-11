@@ -1,0 +1,68 @@
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  flex-wrap: wrap;
+  background-color: rgb(49, 45, 45);
+  color: white;
+}
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  background-color: #00aeff;
+}
+
+.fotoPerfil {
+  width: 10%;
+}
+
+footer {
+  background-color: rgb(49, 45, 45);
+  margin-top: 14.5vh;
+}
+
+section {
+  height: 25em;
+}
+.grid{
+  display: grid;
+  /* grid-template-rows:1fr 1fr 1fr; */
+  grid-template-columns:1fr 1fr 1fr 1fr; 
+}
+
+.imgProjetos{
+ 
+  width: 20em;
+  height: 14em;
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5em;
+}
