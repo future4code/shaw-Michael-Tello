@@ -1,0 +1,232 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap'); */
+@import url("http://fonts.cdnfonts.com/css/glacial-indifference-2");
+
+*,
+body,
+html {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Glacial Indifference", sans-serif;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  height: 7em;
+  flex-wrap: wrap;
+  background-color: #1066e1;
+  color: white;
+  font-weight: 600;
+  box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
+}
+
+.logo {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav a {
+  text-decoration: none;
+  color: white;
+  padding: 10px;
+  margin-left: 20px;
+}
+
+nav a:hover {
+  background-color: #00aeff;
+}
+
+section {
+  background-repeat: no-repeat;
+  height: 40em;
+  color: black;
+}
+
+.homeBio {
+  margin-top: 0.4em;
+  font-size: 4em;
+  text-align: center;
+  /* text-decoration: underline; */
+}
+
+section p {
+  font-size: 1.2em;
+  margin-top: 3em;
+  display: flex;
+  justify-content: center;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 2;
+}
+
+.imgContainer {
+  background-image: url(img/glow-blue.jpg);
+  height: 24em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fotoPerfil {
+  margin-top: 5em;
+  width: 15%;
+  border-radius: 50%;
+}
+section .skills {
+  font-size: 0.5em;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 8em;
+  margin-top: 18em;
+  background-color: #c8611f;
+}
+
+footer p {
+  font-size: 0.8em;
+  margin-left: 1em;
+  color: rgb(255, 255, 255);
+}
+
+.social {
+  display: flex;
+  justify-content: flex-end;
+  padding: 1.5em;
+}
+
+/* Contatos */
+input[type="text"],
+select,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  resize: vertical;
+}
+
+label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  color: black;
+}
+
+input[type="submit"] {
+  margin-top: 2em;
+  width: 8em;
+  margin-right: 2em;
+  background-color: #00aeff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  float: right;
+}
+
+input[type="submit"]:hover {
+  background-color: #148fc9;
+}
+
+.container {
+  border-radius: 5px;
+  background-color: #f2f2f2;
+  padding: 20px;
+}
+
+/* Projetos */
+.gridProjects {
+  margin-top: 5em;
+  display: grid;
+  grid-template-columns: 2fr 2fr 2fr;
+  padding: 3em;
+}
+/* 
+.grid > div {
+} */
+
+figcaption {
+  text-align: center;
+  margin-right: 5em;
+  font-size: 1.5em;
+}
+
+.imgProjetos {
+  margin-top: 2em;
+  width: 20em;
+  height: 15em;
+  border: thin rgb(0, 0, 0) solid;
+}
+
+/* Skills */
+.gridSkills {
+  margin-top: 3em;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.skill {
+  box-shadow: 0px 8px 8px -6px rgba(0, 0, 0, 0.5);
+  border: thin rgb(173, 169, 169) solid;
+  width: 14em;
+  height: 18em;
+
+  display: e;
+}
+
+.iconSkill {
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5em;
+}
+
+.titleSkill {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  bottom: 2em;
+  /* text-decoration: underline; */
+}
+
+.iconSoft {
+  /* text-decoration: underline; */
+  display: flex;
+  justify-content: center;
+}
+
+/* Ensino */
+.containerExperience {
+  display: flex;
+  justify-content: center;
+  /* margin-left: auto;
+margin-right: auto; */
+  /* width: 150em; */
+  line-height: 2;
+  font-size: 0.8em;
+}
+
+.experience p {
+  display: flex;
+  justify-content: center;
+  /* margin-left: 10em; */
+}
+
+.education p {
+  display: flex;
+  justify-content: center;
+}
+
