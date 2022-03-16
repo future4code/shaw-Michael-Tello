@@ -5,29 +5,52 @@ body {
 }
 
 .container {
+  flex-direction: column;
   display: flex;
   flex-wrap: wrap;
   width: 100vw;
+  height: 100vh;
 }
 
 header {
   width: 100%;
   background-color: rgb(255, 145, 0);
   display: flex;
-  padding: 1em;
   justify-content: space-between;
   align-items: center;
+  padding: 1em;
   flex-wrap: wrap;
 }
 
+@media screen and (max-device-width: 175px) {
+  header h2 {
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
 input[type="text"] {
-  margin-right: 3em;
+  display: flex;
   padding: 0.3em;
   height: 1.5em;
   width: 9em;
+  margin-right: 3em;
+}
+input[type="text"]:focus {
+  width: 250px;
+}
+
+@media screen and (max-device-width: 239px) {
+  input[type="text"] {
+    display: none;
+  }
 }
 
 main {
+  border: 1px solid blue;
+  flex-grow: 1;
   width: 100%;
   display: flex;
   flex-flow: row wrap;
@@ -35,10 +58,17 @@ main {
 }
 
 .media {
+  background: linear-gradient(
+    90deg,
+    rgb(255, 145, 0) 0%,
+    rgb(255, 255, 255) 100%,
+    rgb(0, 119, 255) 95%
+  );
   border: 0.1em ridge rgb(9, 255, 0);
   flex-grow: 1;
   flex-basis: 13.75em;
   margin: 2em 2em 2em 2em;
+  box-shadow: 0px 1px #f3efee;
 }
 
 .media p {
@@ -53,7 +83,7 @@ main {
 }
 
 footer {
-  height: 7vh;
+  /* margin-top: 10vh; */
   width: 100%;
   display: flex;
   justify-content: center;
@@ -61,7 +91,18 @@ footer {
   font-size: 1.2em;
   display: flex;
   color: white;
-  background-color: rgb(87, 78, 67);
+  background-color: rgb(27, 26, 26);
+}
+
+@media screen and (max-device-width: 239px) {
+  footer p {
+    color: rgb(255, 255, 255);
+    font-size: 0.5em;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 1em;
+  }
 }
 
 a {
