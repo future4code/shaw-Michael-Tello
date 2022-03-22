@@ -11,9 +11,9 @@ const BigcardContainer = styled.div`
     width: 40vw;
 
     >img{
-        width: 70px;
-    margin-right: 10px;
-    border-radius: 50%;
+        width: 50px;
+        border-radius:50%;
+    margin-right: 15px; 
     }
 
 h4{
@@ -32,9 +32,9 @@ function CardGrande(props) {
     return (
  
         <BigcardContainer>
-           {/* <a href={props.link}> */}
+          
                <img src={ props.imagem } />
-                {/* </a>  */}
+             
             <div>
                 <h4>{ props.nome }</h4>
                 <p>{ props.descricao }</p>

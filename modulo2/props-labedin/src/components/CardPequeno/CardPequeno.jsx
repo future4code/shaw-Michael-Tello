@@ -20,7 +20,9 @@ const SmallCardContainer = styled.div`
 }
 
 img{
-	padding: 1em;
+    width: 30px;
+    margin-right: 10px;
+   
 }
 `;
 

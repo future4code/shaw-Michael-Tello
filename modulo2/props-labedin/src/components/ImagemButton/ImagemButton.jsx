@@ -11,6 +11,7 @@ export const ImgButtonContainer  = styled.div`
     margin: 10px auto;
 
     > img {
+        
         width: 30px;
     margin-right: 10px; 
     }
@@ -20,8 +21,10 @@ export const ImgButtonContainer  = styled.div`
 function ImagemButton(props) {
     return (
         <ImgButtonContainer>
+           
             <img src={ props.imagem }/>
             <p>{ props.texto }</p>
+            
         </ImgButtonContainer>
 
     )
