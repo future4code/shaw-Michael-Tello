@@ -122,12 +122,7 @@ class Post extends React.Component {
       this.state.numeroSalvos = 0;
     }
 
-    // let componenteCompartilha;
-    // if (this.state.compartilhado) {
-    //   componenteCompartilha = (
-    //     // <SecaoComentario aoEnviar={this.aoEnviarComentario} />
-    //   );
-    // }
+  
 
     let componenteComentario;
     if (this.state.comentando) {
@@ -145,13 +140,14 @@ class Post extends React.Component {
     }
 
     return (
+      <>
       <PostContainer>
         <PostHeader>
-          <UserPhoto src={this.props.fotoUsuario} alt={"Imagem do usuario"} />
-          <p>{this.props.nomeUsuario}</p>
+          <UserPhoto src={this.props.valorFotoUsuario} alt={"Imagem do usuario"} />
+          <p>{this.props.valorNome}</p>
         </PostHeader>
 
-        <PostPhoto src={this.props.fotoPost} alt={"Imagem do post"} />
+        <PostPhoto src={this.props.valorFotoPost} alt={"Imagem do post"} />
 
         <PostFooter>
           <IconeComContador
@@ -181,6 +177,11 @@ class Post extends React.Component {
         {componenteComentario}
         {componenteCompartilha}
       </PostContainer>
+
+{/* <div >
+{this.props.valorNome}
+  </div> */}
+  </>
     );
   }
 }
