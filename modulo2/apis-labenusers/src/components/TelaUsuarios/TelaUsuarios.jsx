@@ -14,6 +14,12 @@ flex-direction: column;
 `
 
 class Telausarios extends React.Component {
+
+
+    onClickPesquisarNome=()=> {
+        alert('Erro ao pesquisar')
+    }
+
     render() {
         const componentsListUsers = this.props.listUsers.map((lista) => (
  <li key={lista.id}>{lista.name} <button onClick={() => this.props.deletarUsuario(lista.id)}>X</button></li>
@@ -37,7 +43,7 @@ class Telausarios extends React.Component {
                     <input
                         placeholder="Pesquisa"
                     />
-                    <button>Pesquisar</button>
+                    <button onClick={this.onClickPesquisarNome}>Pesquisar</button>
                 </Filho2>
             </Mae>
         )
