@@ -2,17 +2,16 @@ import React from "react";
 import axios from "axios";
 import { baseUrl } from "./constants";
 import { headers } from "./constants";
-import TelaCadastro from './components/TelaCadastro/TelaCadastro.jsx'
-import TelaUsarios from './components/TelaUsuarios/TelaUsuarios.jsx'
+import TelaCadastro from "./components/TelaCadastro/TelaCadastro.jsx";
+import TelaUsarios from "./components/TelaUsuarios/TelaUsuarios.jsx";
 // import * as S from "./styles";
-
 
 class App extends React.Component {
   // ANCHOR State
   state = {
     inputName: "",
     inputEmail: "",
-    user: [],
+    listUsers: [],
     mostrar: false,
   };
 
@@ -26,8 +25,7 @@ class App extends React.Component {
     axios
       .get(baseUrl, headers)
       .then((res) => {
-        this.setState({ user: res.data });
-        // this.setState({ inputResultEmail: res. });
+        this.setState({ listUsers: res.data });
       })
       .catch((err) => {
         alert(err.response.data);
@@ -46,6 +44,7 @@ class App extends React.Component {
       .then((res) => {
         //Pega todos os usuarios
         this.getAllUsers();
+        alert("Usuario Cadastrado com Sucesso!");
         //Deixar o texto do input com um valor vazio
         this.setState({
           inputName: "",
@@ -53,7 +52,7 @@ class App extends React.Component {
         });
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        alert("Erro");
       });
   };
 
@@ -64,13 +63,10 @@ class App extends React.Component {
       .then((res) => {
         //Pega todos os usuarios
         this.getAllUsers();
-        //Deixar o texto do input com um valor vazio
-        this.setState({
-          inputName: "",
-        });
+        alert("Usuario apagado com sucesso");
       })
       .catch((err) => {
-        alert(err.response.data.message);
+        alert("Erro ao apagar usuario");
       });
   };
 
@@ -83,36 +79,30 @@ class App extends React.Component {
     this.setState({ inputEmail: event.target.value });
   };
 
-  onClickTrocaTela = () =>{
-    console.log(this.state.mostrar)
-    this.setState({mostrar: !this.state.mostrar})
-  }
+  onClickTrocaTela = () => {
+    console.log(this.state.mostrar);
+    this.setState({ mostrar: !this.state.mostrar });
+  };
 
   render() {
-   
-    
-    
     return (
-      < >
-        <button onClick={this.onClickTrocaTela}>Trocar Tela</button>     
-        {/* {this.renderizarPagina()} */}
-      <TelaCadastro
-  inputName={this.state.inputName}
-  inputEmail={this.state.inputEmail}
-  onChangeInputEmail={this.onChangeInputEmail}
-  onChangeInputName={this.onChangeInputName}
-  mostrar={this.state.mostrar}
-  criarUsuario={this.criarUsuario}
-  onClickTrocaTela={this.onClickTrocaTela}
-     />
+      <>
+        <button onClick={this.onClickTrocaTela}>Trocar Tela</button>
+        <TelaCadastro
+          inputName={this.state.inputName}
+          inputEmail={this.state.inputEmail}
+          onChangeInputEmail={this.onChangeInputEmail}
+          onChangeInputName={this.onChangeInputName}
+          mostrar={this.state.mostrar}
+          criarUsuario={this.criarUsuario}
+          onClickTrocaTela={this.onClickTrocaTela}
+        />
 
-
-<TelaUsarios
-mostrar={this.state.mostrar}
-listUsers={this.state.listUsers}
-deletarUsuario={this.deletarUsuario}
-/> 
-       
+        <TelaUsarios
+          mostrar={this.state.mostrar}
+          listUsers={this.state.listUsers}
+          deletarUsuario={this.deletarUsuario}
+        />
       </>
     );
   }
