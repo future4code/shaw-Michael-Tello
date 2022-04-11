@@ -1,45 +1,65 @@
 import React from "react";
-import Home from "./components/Home/";
-import AdicionarPlaylist from "./components/AdicionarPlaylist";
-import ListaPlaylists from "./components/ListaPlaylists";
+import Header from "./components/Header";
+import {AppContainer} from '../styled'
 
-class src extends React.Component {
+
+
+import PlaylistCreationPage from "./components/PlaylistCreationPage";
+import PlaylistManagerPage from "./components/PlaylistManagerPage";
+
+
+class App extends React.Component {
   state = {
-    telaAtual: "adicionarPlaylist",
-    mostrarTela:false
+    currentPage: "playlistCreationPage"
+    
   };
 
   // ANCHOR EVENTOS
-  // escolheTela = () => {
-  //   switch (this.state.telaAtual) {
-  //     case "adicionarPlaylist":
-  //       return <AdicionarPlaylist onClickTelaLista={this.onClickTelaLista} />;
 
-  //     case "listaPlaylist":
-  //       return (
-  //         <ListaPlaylists ={this.onClickTelaAdicionar} />
-  //       );
+  changePage= (currentPage) => {
+    this.setState({currentPage: currentPage})
+  }
 
-  //     default:onClickTelaAdicionar
-  //       alert("ERRO na navegação");
-  //   }
-  // };
+  irParaListaPlaylists = () => {
+    this.setState({ currentPage: "listaPlaylist",clickPlaylistUrl:'' });
+  };
 
 
+  irParaAdicionarPlaylist = () => {
+    this.setState({ currentPage: "adicionarPlaylist" });
+  };
 
   render() {
+    const renderCurrrentPage = () => {
+      switch (this.state.currentPage) {
+        case "playlistCreationPage":
+          return <PlaylistCreationPage  />;
+          // irParaListaPlaylists={this.irParaListaPlaylists}
+        case "playlistManagerPage":
+          return <PlaylistManagerPage  />;
+          // irParaAdicionarPlaylist={this.irParaAdicionarPlaylist}
+
+          // case "detail":
+          //   return (
+          //     <DetalhePlaylist
+          //     irParaListaPlaylists={this.irParaListaPlaylists}
+          //       url={this.state.clickPlaylistUrl}
+          //     />
+          //   );
+  
+        default:
+          return <PlaylistCreationPage/>;
+      }
+    };
     return (
-
-
-      <>
-      {this.state.mostrarTela ? <p>Esta mostrando</p> : <div></div>}
-        <Home />
-        {/* {this.escolheTela()} */}
-
-
-      </>
+      <AppContainer>
+        <Header 
+        changePage={this.changePage}
+        />
+        {renderCurrrentPage()}
+      </AppContainer>
     );
   }
 }
 
-export default src;
+export default App;
