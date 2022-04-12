@@ -1,7 +1,7 @@
 import React from "react";
 import TelaCadastro from "./components/TelaCadastro";
 import TelaListaUsuarios from "./components/TelaListaUsuarios";
-import TelaDetalheUsuario from "./components/TelaDetalheUsuario";
+// import TelaDetalheUsuario from "./components/TelaDetalheUsuario";
 
 class App extends React.Component {
   // ANCHOR STATE

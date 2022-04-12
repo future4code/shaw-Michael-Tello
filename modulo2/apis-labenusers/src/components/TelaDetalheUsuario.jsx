@@ -35,7 +35,6 @@ class TelaDetalheUsuario extends React.Component {
 
   onChangeEmail = (event) => {
     const novoValorEmail = event.target.value;
-
     this.setState({ email: novoValorEmail });
   };
 
