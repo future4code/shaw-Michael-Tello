@@ -20,14 +20,14 @@ class App extends React.Component {
     this.setState({currentPage: currentPage})
   }
 
-  irParaListaPlaylists = () => {
-    this.setState({ currentPage: "listaPlaylist",clickPlaylistUrl:'' });
-  };
+  // irParaListaPlaylists = () => {
+  //   this.setState({ currentPage: "listaPlaylist",clickPlaylistUrl:'' });
+  // };
 
 
-  irParaAdicionarPlaylist = () => {
-    this.setState({ currentPage: "adicionarPlaylist" });
-  };
+  // irParaAdicionarPlaylist = () => {
+  //   this.setState({ currentPage: "adicionarPlaylist" });
+  // };
 
   render() {
     const renderCurrrentPage = () => {
