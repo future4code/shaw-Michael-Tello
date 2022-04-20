@@ -2,9 +2,7 @@ import Fab from '@material-ui/core/Fab'
 import React from 'react'
 import * as S from './styled'
 
-
-
-function Like() {
+function ChooseButtons() {
 	return (
 <S.Container>
 	
@@ -12,11 +10,11 @@ function Like() {
   <S.CloseIcon/>
 </Fab>
 
-<Fab >
+<Fab size="medium">
   <S.HeartIcon/>
 </Fab>
 </S.Container>
 	)
 }
 
-export default Like
+export default ChooseButtons

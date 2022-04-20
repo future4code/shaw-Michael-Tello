@@ -1,19 +1,30 @@
 import { createTheme } from "@material-ui/core/";
 
+
 export const theme = createTheme({
   palette: {
     primary: {
-      main: "#ec2a08",
-      light: "#fbf4fc",
+      main: "#00B4D8", // azul
+      light: "#42a5f5",
+      dark: "#1565c0"
     },
 
     secondary: {
-      main: "#002ae7",
-      light: "#8f8f92",
+      main: "#F72585", // rosa
+      light: "#B5179E",
+      dark: "#7209B7"
+    },
+    warning: {
+      main: "#AE2012", // vermelho
+      light: "#9B2226",
+      dark: "#BB3E03"
+    },
+    success: {
+      main: "#2ae434", // vermelho
+      light: "#9add86",
+      dark: "#036800"
     },
 
-    contrastThreshold: 3,
-
-    tonalOffset: 0.2,
+    
   },
 });
