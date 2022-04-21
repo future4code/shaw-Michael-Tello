@@ -12,21 +12,20 @@ export const ListContainer = styled.div`
 function MatchListPage() {
 	const [matches, setMatches] = useState([]);
 
-
 	useEffect(() => {
     axios
       .get(`${BASE_URL}/matches`)
       .then((res) => {
-        setMatches(res.data.profile);
+        setMatches(res.data.matches);
       })
       .catch((err) => {
         alert("Erro no GET");
       });
-  });
+  },[]);
 
   return (
     <ListContainer>
-      {matches.map((profile) => {
+      {matches.map(profile => {
         return <MatchListItem profile={profile} />;
       })}
     </ListContainer>

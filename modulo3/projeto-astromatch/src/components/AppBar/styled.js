@@ -28,7 +28,16 @@ export const ContainerMatchIcon = styled.div`
   justify-content: flex-end;
 `;
 
-export const MatchIcon = styled(BsPeopleFill)`
+export const ButtonScreen = styled.button`
+  color: ${cor3};
+  cursor: pointer;
+`;
+
+export const ButtonMatch = styled(BsPeopleFill)`
   color: ${cor3};
   font-size: 2em;
+  cursor: pointer;
 `;
+
+// 1:02
+// https://vimeo.com/419340516/df010a72a0

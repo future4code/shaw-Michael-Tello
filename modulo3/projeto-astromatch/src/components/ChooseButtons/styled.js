@@ -2,7 +2,7 @@ import styled from 'styled-components';
 import { AiOutlineClose } from 'react-icons/ai';
 import { BsFillSuitHeartFill } from 'react-icons/bs';
 
-export const Container = styled.div`
+export const ButtonsContainer = styled.div`
 display: flex;
 justify-content: center;
 gap: 5em;

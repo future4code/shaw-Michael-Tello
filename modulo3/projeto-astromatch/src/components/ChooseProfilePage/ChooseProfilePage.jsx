@@ -7,7 +7,8 @@ import axios from "axios";
 function ChooseProfilePage() {
   const [profileToChoose, setProfileToChoose] = useState({});
 
-  useEffect(() => {
+  // ANCHOR GET
+  const getProfileChoose = () => {
     axios
       .get(`${BASE_URL}/person`)
       .then((res) => {
@@ -16,12 +17,38 @@ function ChooseProfilePage() {
       .catch((err) => {
         alert("Erro no GET");
       });
+  };
+
+    // ANCHOR POST
+  const chooseProfile = (choice)=> {
+    const body = {
+      choice: choice,
+      id: profileToChoose.id
+    };
+
+    axios
+      .post(`${BASE_URL}/choose-person`, body)
+      .then((res) => {})
+      .catch((err) => {});
+    getProfileChoose();
+  }
+
+  useEffect(() => {
+    getProfileChoose();
   }, []);
+
+  const onClickNo = () => {
+    chooseProfile(false)
+  };
+
+  const onClickYes = () => {
+    chooseProfile(true)
+  };
 
   return (
     <div>
       <ProfileCard profile={profileToChoose} />
-      <ChooseButtons />
+      <ChooseButtons onClickNo={onClickNo} onClickYes={onClickYes} />
     </div>
   );
 }
