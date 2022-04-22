@@ -1,8 +1,10 @@
 import styled from "styled-components";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { cor2, cor3 } from "../../assets/pallete";
+import { cor2, cor3, cor4 } from "../../assets/pallete";
 import { BsPeopleFill } from "react-icons/bs";
+
+import { MdOutlinePersonalVideo } from "react-icons/md";
 
 export const CardContainer = styled(Container)`
   display: flex;
@@ -15,6 +17,7 @@ export const CardContainer = styled(Container)`
 
 export const BoxContainer = styled(Box)`
   display: flex;
+  border-bottom: 1px solid lightgray;
 `;
 
 export const ContainerTypography = styled.div`
@@ -29,15 +32,12 @@ export const ContainerMatchIcon = styled.div`
 `;
 
 export const ButtonScreen = styled.button`
-  color: ${cor3};
+  color: ${cor4};
   cursor: pointer;
 `;
 
 export const ButtonMatch = styled(BsPeopleFill)`
-  color: ${cor3};
+  color: ${cor4};
   font-size: 2em;
   cursor: pointer;
 `;
-
-// 1:02
-// https://vimeo.com/419340516/df010a72a0

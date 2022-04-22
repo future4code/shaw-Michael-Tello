@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import AppBar from "../AppBar/AppBar";
-import ChooseProfilePage from "../ChooseProfilePage/ChooseProfilePage";
-import MatchListPage from "../MatchListPage/MatchListPage";
+import ChooseProfilePage from "../pages/ChooseProfilePage/ChooseProfilePage";
+import MatchListPage from "../pages/MatchListPage/MatchListPage";
+import ResetButton from '../ResetButton/ResetButton'
 import * as S from "./styled";
 
 function Main() {
@@ -14,21 +15,21 @@ const renderSelectedPage = ()=> {
       return <ChooseProfilePage/>
       case 'match-list':
         return <MatchListPage/>
-  
     default:
       return <ChooseProfilePage/>
   }
 }
 
 const goToChooseProfilePage = ()=> {
-  setSelectPage('match-list')
-}
-
-const gotToMatchListPage = ()=> {
   setSelectPage('choose-profile')
 }
 
+const gotToMatchListPage = ()=> {
+  setSelectPage('match-list')
+}
+
   return (
+    <>
     <S.MainContainer maxWidth="sm">
       <AppBar 
       goToChooseProfilePage={goToChooseProfilePage}
@@ -36,6 +37,8 @@ const gotToMatchListPage = ()=> {
       />
       {renderSelectedPage()}
     </S.MainContainer>
+    <ResetButton/>
+    </>
   );
 }
 

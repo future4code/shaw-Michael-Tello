@@ -1,21 +1,22 @@
 import { Typography } from "@mui/material";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import * as S from "./styled";
 
 function AppBar(props) {
   return (
     <>
       <S.BoxContainer>
-        <S.ButtonScreen onClick={props.gotToMatchListPage}>Tela Principal</S.ButtonScreen>
+
+        <S.ButtonScreen onClick={props.goToChooseProfilePage}>Tela Inicial</S.ButtonScreen >
         <S.ContainerTypography>
           <Typography variant="h4">Astromatch</Typography>
         </S.ContainerTypography>
 
         <S.ContainerMatchIcon>
-          <S.ButtonMatch onClick={props.goToChooseProfilePage} />
+          <S.ButtonMatch onClick={props.gotToMatchListPage} />
         </S.ContainerMatchIcon>
       </S.BoxContainer>
-      <hr />
+      
     </>
   );
 }
