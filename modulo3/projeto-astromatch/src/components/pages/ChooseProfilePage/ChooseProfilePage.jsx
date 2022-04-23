@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ProfileCard from "../../ProfileCard/ProfileCard";
 import ChooseButtons from "../../ChooseButtons/ChooseButtons";
-import { BASE_URL, headers } from "../../../constants/url";
+import { BASE_URL} from "../../../constants/url";
 import axios from "axios";
 
 function ChooseProfilePage() {

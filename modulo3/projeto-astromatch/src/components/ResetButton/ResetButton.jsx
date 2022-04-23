@@ -7,9 +7,10 @@ function ResetButton() {
   const [open, setOpen] = useState(false);
   const [erro, setErro] = useState(false);
 
+  // ANCHOR PUT
   const onClickReset = () => {
     axios
-      .put(`${BASE_URL}/123`)
+      .put(`${BASE_URL}/clear`)
       .then((res) => {
         setErro(false);
         setOpen(true);

@@ -4,7 +4,7 @@ import { BASE_URL } from "../../../constants/url";
 import axios from "axios";
 
 import styled from "styled-components";
-import { Alert, Stack } from "@mui/material";
+import {  Stack } from "@mui/material";
 
 export const ListContainer = styled.div`
   padding: 8px;
