@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import Container from "@mui/material/Container";
 import Box from "@mui/material/Box";
-import { cor2, cor3, cor4 } from "../../assets/pallete";
+import { cor2, cor4 } from "../../constants/pallete";
 import { BsPeopleFill } from "react-icons/bs";
 
-import { MdOutlinePersonalVideo } from "react-icons/md";
 
 export const CardContainer = styled(Container)`
   display: flex;

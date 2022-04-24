@@ -1,13 +1,16 @@
 import React, { useEffect, useState } from "react";
 import ProfileCard from "../../ProfileCard/ProfileCard";
 import ChooseButtons from "../../ChooseButtons/ChooseButtons";
-import { BASE_URL} from "../../../constants/url";
+import { BASE_URL } from "../../../constants/url";
 import axios from "axios";
+
+import Skeleton from "@mui/material/Skeleton";
+
 
 function ChooseProfilePage() {
   const [profileToChoose, setProfileToChoose] = useState(undefined);
 
-  // ANCHOR GET
+  // ANCHOR  GET
   const getProfileChoose = () => {
     axios
       .get(`${BASE_URL}/person`)
@@ -15,7 +18,7 @@ function ChooseProfilePage() {
         setProfileToChoose(res.data.profile);
       })
       .catch((err) => {
-        alert("Erro no GET");
+        alert("Erro no  getProfileChoose");
       });
   };
 
@@ -35,7 +38,9 @@ function ChooseProfilePage() {
       .then((res) => {
         getProfileChoose();
       })
-      .catch((err) => {});
+      .catch((err) => {
+        alert("Erro no POST Choose Person");
+      });
   };
 
   // ANCHOR EVENTOS
@@ -49,14 +54,17 @@ function ChooseProfilePage() {
 
   return (
     <div>
-      {/* ANCHOR Renderiza a pagina quando é montado */}
       {profileToChoose ? (
         <>
           <ProfileCard profile={profileToChoose} />
           <ChooseButtons onClickNo={onClickNo} onClickYes={onClickYes} />
         </>
       ) : (
-        <p>Carregando...</p>
+       <>
+          <Skeleton  />
+          Carregando...
+          <Skeleton variant="rectangular"  width={530} height={420} />
+          </>
       )}
     </div>
   );

@@ -5,10 +5,11 @@ import MatchListPage from "../pages/MatchListPage/MatchListPage";
 import ResetButton from '../ResetButton/ResetButton'
 import * as S from "./styled";
 
-function Main() {
+function MainPage() {
 const [selectPage,setSelectPage] = useState('choose-profile')
 
 
+// ANCHOR NAVEGAÇÃO
 const renderSelectedPage = ()=> {
   switch (selectPage) {
     case 'choose-profile':
@@ -42,4 +43,4 @@ const gotToMatchListPage = ()=> {
   );
 }
 
-export default Main;
+export default MainPage;

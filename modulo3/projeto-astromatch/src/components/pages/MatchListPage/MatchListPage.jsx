@@ -4,10 +4,10 @@ import { BASE_URL } from "../../../constants/url";
 import axios from "axios";
 
 import styled from "styled-components";
-import {  Stack } from "@mui/material";
 
-export const ListContainer = styled.div`
-  padding: 8px;
+
+const ListContainer = styled.div`
+  padding: 0.5em;
 `;
 
 function MatchListPage() {
@@ -19,25 +19,21 @@ function MatchListPage() {
       .get(`${BASE_URL}/matches`)
       .then((res) => {
         setMatches(res.data.matches);
-        return (
-          <>
-           <Stack spacing={2} sx={{ width: '100%' }}>
-         
-           </Stack>
-          </>
-        );
       })
-      .catch((err) => {});
+      .catch((err) => {
+        alert("Erro no Get Matches");
+      });
   }, []);
 
+  // ANCHOR MAP DE MATCHES
+  const listPage = matches.map((profile) => {
+      return <MatchListItem key={profile.id} profile={profile} />;
+    })
+ 
   return (
     <ListContainer>
-      {matches.map((profile) => {
-        return <MatchListItem key={profile.id} profile={profile} />;
-      })}
-        {/* {  const sucesso =  <Alert severity="error">This is an error message!</Alert>} */}
+      {listPage}
     </ListContainer>
-    
   );
 }
 

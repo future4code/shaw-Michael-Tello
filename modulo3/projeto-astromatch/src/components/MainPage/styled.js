@@ -7,7 +7,6 @@ export const MainContainer = styled(Container)`
   justify-content: center;
   background: ${cor2};
   min-height: 100vh;
-  
   border-style: ridge;
 
 

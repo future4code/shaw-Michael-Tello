@@ -1,7 +1,7 @@
-import { Alert, Snackbar } from "@mui/material";
-import axios from "axios";
 import React, { useState } from "react";
+import axios from "axios";
 import { BASE_URL } from "../../constants/url";
+import { Alert, Snackbar } from "@mui/material";
 
 function ResetButton() {
   const [open, setOpen] = useState(false);
@@ -27,7 +27,7 @@ function ResetButton() {
     }
     setOpen(false);
   };
-  console.log(erro);
+
   return (
     <div>
       <button onClick={onClickReset} style={{ cursor: "pointer;" }}>
