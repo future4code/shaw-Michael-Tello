@@ -5,7 +5,6 @@ import axios from "axios";
 
 import styled from "styled-components";
 
-
 const ListContainer = styled.div`
   padding: 0.5em;
 `;
@@ -27,14 +26,10 @@ function MatchListPage() {
 
   // ANCHOR MAP DE MATCHES
   const listPage = matches.map((profile) => {
-      return <MatchListItem key={profile.id} profile={profile} />;
-    })
- 
-  return (
-    <ListContainer>
-      {listPage}
-    </ListContainer>
-  );
+    return <MatchListItem key={profile.id} profile={profile} />;
+  });
+
+  return <ListContainer>{listPage}</ListContainer>;
 }
 
 export default MatchListPage;
