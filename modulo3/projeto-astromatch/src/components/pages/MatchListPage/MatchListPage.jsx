@@ -27,7 +27,7 @@ function MatchListPage() {
   // ANCHOR MAP DE MATCHES
   const listPage = matches.map((profile) => {
     return <MatchListItem key={profile.id} profile={profile} />;
-  });
+  }); 
 
   return <ListContainer>{listPage}</ListContainer>;
 }

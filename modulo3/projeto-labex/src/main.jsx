@@ -6,12 +6,16 @@ import App from './App'
 import CssBaseline from '@mui/material/CssBaseline';
 import {  ThemeProvider } from "@material-ui/core/styles";
 import { theme } from "./constants/theme";
+import { MuiPickersUtilsProvider } from '@material-ui/pickers';
+import MomentUtils from '@date-io/moment';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <ThemeProvider theme={theme}>
+      <MuiPickersUtilsProvider utils={MomentUtils}>
     <CssBaseline />
     <App />
+    </MuiPickersUtilsProvider>
     </ThemeProvider>
   </React.StrictMode>
 )

@@ -13,19 +13,19 @@ function Router() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path={"/login"} element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />
 
-        <Route path={"/viagem/detalhe"} element={<TripDetailsPage />} />
+        <Route path="/viagens/detalhe/:id" element={<TripDetailsPage />} />
 
-        <Route path={"/viagem/criar"} element={<CreateTripPage />} />
+        <Route path="/viagens/criar" element={<CreateTripPage />} />
 
-        <Route path={"/viagens"} element={<TripsListPage />} />
+        <Route path="/viagem" element={<TripsListPage />} />
 
-        <Route path={"/inscricao"} element={<ApplicationFormPage />} />
+        <Route path="/inscricao" element={<ApplicationFormPage />} />
 
-        <Route path={"/"} element={<HomePage />} />
+        <Route index element={<HomePage />} />
 
-        <Route element={<div>Pagina não encontrada </div>} />
+        <Route path="*" element={<div>Pagina não encontrada </div>} />
       </Routes>
     </BrowserRouter>
   );
