@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 export const FormContainer = styled.form`
-	display: grid;
-	gap:1em;
+  display: grid;
+  gap: 1em;
 `;

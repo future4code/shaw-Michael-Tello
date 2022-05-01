@@ -1,20 +1,27 @@
 import Router from "./routes/Router";
-
-import styled from "styled-components";
-
-export const AppContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 16px;
-`;
+import CssBaseline from "@mui/material/CssBaseline";
+import { ThemeProvider } from "@material-ui/core/styles";
+import { theme } from "./constants/theme";
+import { Header } from "./components/Header";
 
 function App() {
   return (
-    <AppContainer>
-      <Router />
-    
-    </AppContainer>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <div
+        className="AppContainer"
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          padding: "0",
+          margin: "0",
+        }}
+      >
+        <Header />
+        <Router />
+      </div>
+    </ThemeProvider>
   );
 }
 

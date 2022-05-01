@@ -7,15 +7,22 @@ import {
 import HighlightOffIcon from "@mui/icons-material/HighlightOff";
 import CheckCircleOutlineIcon from "@mui/icons-material/CheckCircleOutline";
 
-function CandidateItem() {
+function CandidateItem(props) {
+  const approveCandidate = () => {
+    props.decideCandidate(true, props.candidate.id);
+  };
+
+  const rejectCandidate = () => {
+    props.decideCandidate(false, props.candidate.id);
+  };
   return (
     <ListItem>
-      <ListItemText primary="Candidato 1" />
+      <ListItemText primary={props.candidate.name} />
       <ListItemSecondaryAction>
-        <IconButton >
+        <IconButton onClick={approveCandidate}>
           <CheckCircleOutlineIcon />
         </IconButton>
-        <IconButton>
+        <IconButton onClick={rejectCandidate}>
           <HighlightOffIcon />
         </IconButton>
       </ListItemSecondaryAction>

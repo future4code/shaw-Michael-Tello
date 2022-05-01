@@ -1,24 +1,22 @@
 import { CardContent, Typography, Card } from "@mui/material";
-import React from "react";
 import TripInfoItem from "./TripInfoItem";
 
-function TripInfoCard() {
+function TripInfoCard(props) {
+  const { name, planet, description, date, durationInDays } = props.info;
   return (
-    <div>
-      <Card>
-        <CardContent>
-          <Typography variant="h5" gutterBottom>
-            Informações da viagem
-          </Typography>
+    <Card>
+      <CardContent>
+        <Typography variant="h5" gutterBottom>
+          Informações da viagem
+        </Typography>
 
-          <TripInfoItem infoName={"Nome"} info={"Viagem para marte"} />
-          <TripInfoItem infoName={"Planeta"} info={"Marte"} />
-          <TripInfoItem infoName={"Data"} info={"01/07/2020"} />
-          <TripInfoItem infoName={"Descricao"} info={"Viagem maneira pra colonizar marte"} />
-          <TripInfoItem infoName={"Duração em dias"} info={228} />
-        </CardContent>
-      </Card>
-    </div>
+        <TripInfoItem infoName={"Nome"} info={name} />
+        <TripInfoItem infoName={"Planeta"} info={planet} />
+        <TripInfoItem infoName={"Data"} info={date} />
+        <TripInfoItem infoName={"Descricao"} info={description} />
+        <TripInfoItem infoName={"Duração em dias"} info={durationInDays} />
+      </CardContent>
+    </Card>
   );
 }
 

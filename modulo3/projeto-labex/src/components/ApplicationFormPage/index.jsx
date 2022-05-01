@@ -9,50 +9,49 @@ import {
   TextField,
 } from "@mui/material";
 import React from "react";
-// import { headers, labexURL } from "../../constants/labexAPI";
-// import useRequestData from "../../hooks/useRequestData";
-import { useEffect, useState } from "react";
+import { labexURL } from "../../constants/labexAPI";
 import axios from "axios";
 import { useForm } from "../../hooks/useForm";
+import { useTripsList } from "../../hooks/useTripsList";
 
 function ApplicationFormPage() {
-  const [trips, setTrips] = useState([]);
+  const trips = useTripsList();
   const { form, onChange, cleanFields } = useForm({
     name: "",
     age: 0,
     applicationText: "",
     profession: "",
     country: "",
+    trip: "",
   });
 
-  const register = (event) => {
+  // ANCHOR EVENTO FORM
+  const onSubmitApplication = (event) => {
     event.preventDefault();
-    console.log("Formulário enviado!", form);
+
+    const body = {
+      name: form.name,
+      age: form.age,
+      applicationText: form.applicationText,
+      profession: form.profession,
+      country: form.country,
+    };
+
+    // ANCHOR  POST APPLY TO TRIP
+    axios
+      .post(`${labexURL}/trips/{form.trip.id}/apply`, body)
+      // .then((response) => {
+      //   alert("Requisição enviada");
+      // })
+      // .catch((error) => {
+      //   alert("Erro no POST");
+      // });
+
     cleanFields();
   };
 
- 
-  const getTrip = async () => {
-    await axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labeX/michaelsoto/trips"
-      )
-
-      .then((response) => {
-        console.log(response.data);
-        setTrips(response.data.trips);
-      })
-      .catch((error) => {
-        alert(error);
-      });
-  };
-
-  useEffect(() => {
-    getTrip();
-  }, []);
-
+  // ANCHOR MAP
   const tripsList = trips.map((trip) => {
-    console.log(trip);
     return (
       <MenuItem key={trip.id} value={trip}>
         {trip.name}
@@ -63,7 +62,7 @@ function ApplicationFormPage() {
   return (
     <div>
       <PageTitle title={"Aplicar para viagem"} />
-      <FormContainer onSubmit={register}>
+      <FormContainer onSubmit={onSubmitApplication}>
         <TextField
           label={"Nome do candidato"}
           onChange={onChange}
@@ -92,12 +91,7 @@ function ApplicationFormPage() {
         />
         <FormControl>
           <InputLabel id="select-paises">Paises</InputLabel>
-          <Select
-            labelId="select-paises"
-            onChange={onChange}
-            value={form.country}
-            name={"country"}
-          >
+          <Select onChange={onChange} value={form.country} name={"country"}>
             <MenuItem value="brasil">Brasil</MenuItem>
             <MenuItem value="argentina">Argentina</MenuItem>
             <MenuItem value="eua">Estados Unidos</MenuItem>
@@ -105,12 +99,7 @@ function ApplicationFormPage() {
         </FormControl>
         <FormControl>
           <InputLabel id="select-viagens">Viagens</InputLabel>
-          <Select
-            labelId="select-viagens"
-            onChange={onChange}
-            value={form.trip}
-            name={"trip"}
-          >
+          <Select onChange={onChange} value={form.trip} name={"trip"}>
             {tripsList}
           </Select>
         </FormControl>

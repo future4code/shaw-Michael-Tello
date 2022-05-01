@@ -1,7 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 
-const useRequestData = (estadoInicial, url) => {
+export const useRequestData = (estadoInicial, url) => {
   const [data, setData] = useState(estadoInicial);
   const [loading, setLoading] = useState(false);
   const [erro, setErro] = useState("");
@@ -23,4 +23,4 @@ const useRequestData = (estadoInicial, url) => {
   return [data, loading, erro];
 };
 
-export default useRequestData;
+

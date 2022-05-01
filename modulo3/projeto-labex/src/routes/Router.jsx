@@ -15,11 +15,11 @@ function Router() {
       <Routes>
         <Route path="/login" element={<LoginPage />} />
 
-        <Route path="/viagens/detalhe/:id" element={<TripDetailsPage />} />
+        <Route path="/viagens/detalhe/:tripId" element={<TripDetailsPage />} />
 
         <Route path="/viagens/criar" element={<CreateTripPage />} />
 
-        <Route path="/viagem" element={<TripsListPage />} />
+        <Route path="/viagens" element={<TripsListPage />} />
 
         <Route path="/inscricao" element={<ApplicationFormPage />} />
 

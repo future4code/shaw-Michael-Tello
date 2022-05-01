@@ -1,9 +1,4 @@
 
-export const goToAboutPage = (navigate, language) => {
-	navigate(`/about/${language}`)
-}
-
-
 export const goToHomePage = (navigate) => {
 	navigate("/")
 }
