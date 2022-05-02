@@ -14,6 +14,7 @@ import axios from "axios";
 import { useForm } from "../../hooks/useForm";
 import { useTripsList } from "../../hooks/useTripsList";
 
+
 function ApplicationFormPage() {
   const trips = useTripsList();
   const { form, onChange, cleanFields } = useForm({
@@ -38,14 +39,13 @@ function ApplicationFormPage() {
     };
 
     // ANCHOR  POST APPLY TO TRIP
-    axios
-      .post(`${labexURL}/trips/{form.trip.id}/apply`, body)
-      // .then((response) => {
-      //   alert("Requisição enviada");
-      // })
-      // .catch((error) => {
-      //   alert("Erro no POST");
-      // });
+    axios.post(`${labexURL}/trips/{form.trip.id}/apply`, body);
+    // .then((response) => {
+    //   alert("Requisição enviada");
+    // })
+    // .catch((error) => {
+    //   alert("Erro no POST");
+    // });
 
     cleanFields();
   };
@@ -76,6 +76,8 @@ function ApplicationFormPage() {
           value={form.age}
           name={"age"}
         />
+        
+
         <TextField
           label={"Texto de aplicação"}
           helperText="Explique porque devemos te aprovar?"
