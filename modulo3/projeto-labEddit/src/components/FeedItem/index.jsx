@@ -1,0 +1,41 @@
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
+import CardActions from "@mui/material/CardActions";
+import Collapse from "@mui/material/Collapse";
+import IconButton from "@mui/material/IconButton";
+import Typography from "@mui/material/Typography";
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ShareIcon from "@mui/icons-material/Share";
+
+import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
+import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
+import MailOutlineIcon from "@mui/icons-material/MailOutline";
+
+export function FeedItem() {
+  return (
+    <Card sx={{ maxWidth: 345 }}>
+      <CardContent>
+
+				<Typography variant="caption" >
+				Enviado por: labaluno83 
+				</Typography>
+
+        <Typography paragraph borderTop={1}>
+          Porque a maioria dos desenvolvedores usam Linux? ou as empresas de
+          tecnologia usam Linux ?
+        </Typography>
+      </CardContent>
+      <CardActions disableSpacing>
+        <IconButton>
+          <ArrowCircleUpIcon color="primary" />
+          <p>1.2K</p>
+          <ArrowCircleDownIcon color="primary" />
+        </IconButton>
+
+        <IconButton>
+          <MailOutlineIcon color="primary" />
+        </IconButton>
+      </CardActions>
+    </Card>
+  );
+}
