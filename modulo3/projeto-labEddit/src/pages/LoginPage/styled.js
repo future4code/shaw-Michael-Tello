@@ -1,15 +1,37 @@
-import { Button } from "@mui/material";
+import { Button,InputsLabel} from "@mui/material";
 import styled from "styled-components";
 
-export const Container = styled.div``;
-
-export const FormContainer = styled.div`
-  display: flex;
+export const Container = styled.div`
+ margin-top: 2rem;
+	  display: flex;
+  flex-direction: column;	
   align-items: center;
-  flex-direction: column;
-  margin-top: 4rem;
+
 `;
 
+export const FormContainer = styled.form`
+ margin-top: 1rem;
+  display: flex;
+  flex-direction: column;	
+`;
+
+export const FormContainer = styled.form`
+ margin-top: 1rem;
+  display: flex;
+  flex-direction: column;	
+`;
+
+
+
+
 export const StyleButton = styled(Button)`
-margin-top: 1rem;
+
+`;
+
+export const Div = styled.div`
+  display: flex;
+	height: 100px;
+	gap: 2em;
+	/* justify-content: space-between; */
+  flex-direction: column;	
 `;

@@ -2,7 +2,7 @@ export const goToLogin = (navigate) => {
 	navigate('/')
 }
 
-export const goToRegisterPage = (navigate) => {
+export const goToSignUpPage = (navigate) => {
 	navigate ("/register")
 }
 

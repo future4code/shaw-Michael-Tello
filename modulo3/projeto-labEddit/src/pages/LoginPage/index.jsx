@@ -1,93 +1,57 @@
-import { Visibility, VisibilityOff } from "@mui/icons-material";
-import {  FormControl, IconButton, InputAdornment, InputLabel, OutlinedInput, TextField, Typography } from "@mui/material";
-import React from "react";
-import logo from '../../assets/logo.png'
-import * as S from './styled'
+import {
+  Button,
+  Box,
+  Typography,
+  Container,
+} from "@mui/material";
+import logo from "../../assets/logo.png";
+import { useNavigate } from "react-router-dom";
+import { goToSignUpPage } from "../../routes/coordinatos";
+import { useUnprotectedPage } from "../../hooks/useUnprotectedPage";
+import { LoginForm } from "./LoginForm";
 
 export function LoginPage() {
-  const [values, setValues] = React.useState({
-    amount: "",
-    password: "",
-    weight: "",
-    weightRange: "",
-    showPassword: false
-  });
+  useUnprotectedPage();
+  const navigate = useNavigate();
 
-  const handleChange = (prop) => (event) => {
-    setValues({ ...values, [prop]: event.target.value });
-  };
+  return (
+    <Container component="main" maxWidth="xs">
+      <Box
+        sx={{
+          marginTop: 8,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+        }}
+      >
+        <img src={logo} alt="logo" width="40px" />
 
-  const handleClickShowPassword = () => {
-    setValues({
-      ...values,
-      showPassword: !values.showPassword
-    });
-  };
+        <Typography component="h1" variant="h5">
+          LabEddit
+        </Typography>
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+        <LoginForm />
 
-  return <S.Container>
- 
-<S.FormContainer>
-<img src={logo} alt="logo" width='50px' />
-   <Typography variant="h2">LabEddit</Typography>
-    <Typography  variant="subtitle1" >O projeto de rede social da Labenu</Typography>
-  
-    <TextField label="Nome" variant="outlined" />
+        <Button
+          type={"submit"}
+          fullWidth
+          variant={"contained"}
+          sx={{ mt: 3, mb: 2 }}
+        >
+          Continuar
+        </Button>
 
-    <div style={{marginTop:'1rem'}}></div>
-    {/* <TextField 
-     id="outlined-adornment-password"
-     type={values.showPassword ? "text" : "password"}
-     value={values.password}
-     onChange={handleChange("password")}
-     InputLabelProps={
-       <InputAdornment position="end">
-         <IconButton
-           onClick={handleClickShowPassword}
-           onMouseDown={handleMouseDownPassword}
-           edge="end"
-         >
-           {values.showPassword ? <VisibilityOff /> : <Visibility />}
-         </IconButton>
-       </InputAdornment>
-     }
-
-    label="Senha" variant="outlined" 
-    /> */}
-    
-   
-<FormControl >
-    <InputLabel htmlFor="outlined-adornment-password">Password</InputLabel> 
-       <OutlinedInput
-        id="outlined-adornment-password"
-        type={values.showPassword ? "text" : "password"}
-        value={values.password}
-        onChange={handleChange("password")}
-        endAdornment={
-          <InputAdornment position="end">
-            <IconButton
-              onClick={handleClickShowPassword}
-              onMouseDown={handleMouseDownPassword}
-              edge="end"
-            >
-              {values.showPassword ? <VisibilityOff /> : <Visibility />}
-            </IconButton>
-          </InputAdornment>
-        }
-        label="Password"
-      />
-
-      <S.StyleButton variant="contained">Continuar</S.StyleButton>
-
-<S.StyleButton variant="outlined">Crie uma conta</S.StyleButton>
-
-
-    {/* <TextField label="Senha"  variant="outlined" id="Senha"  /> */}
-    </FormControl>
-
-    </S.FormContainer>
-  </S.Container>;
+        <Button
+          onClick={() => goToSignUpPage(navigate)}
+          type={"submit"}
+          fullWidth
+          variant={"outlined"}
+          color={"primary"}
+          sx={{ mb: 2 }}
+        >
+          Criar uma conta
+        </Button>
+      </Box>
+    </Container>
+  );
 }

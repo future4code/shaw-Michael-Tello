@@ -7,6 +7,10 @@ primary: {
 main: primaryColor,
 contrastText:'#ffff'
 },
+secondary:{
+main:'#EDEDED',
+contrastText: primaryColor
+},
 text: {
 	primary: neutralColor
 }
