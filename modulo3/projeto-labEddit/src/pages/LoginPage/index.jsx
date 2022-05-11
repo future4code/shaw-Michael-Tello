@@ -1,18 +1,15 @@
-import {
-  Button,
-  Box,
-  Typography,
-  Container,
-} from "@mui/material";
+
+import { Box, Typography, Container } from "@mui/material";
 import logo from "../../assets/logo.png";
 import { useNavigate } from "react-router-dom";
-import { goToSignUpPage } from "../../routes/coordinatos";
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage";
 import { LoginForm } from "./LoginForm";
 
 export function LoginPage() {
   useUnprotectedPage();
   const navigate = useNavigate();
+
+  
 
   return (
     <Container component="main" maxWidth="xs">
@@ -31,26 +28,6 @@ export function LoginPage() {
         </Typography>
 
         <LoginForm />
-
-        <Button
-          type={"submit"}
-          fullWidth
-          variant={"contained"}
-          sx={{ mt: 3, mb: 2 }}
-        >
-          Continuar
-        </Button>
-
-        <Button
-          onClick={() => goToSignUpPage(navigate)}
-          type={"submit"}
-          fullWidth
-          variant={"outlined"}
-          color={"primary"}
-          sx={{ mb: 2 }}
-        >
-          Criar uma conta
-        </Button>
       </Box>
     </Container>
   );

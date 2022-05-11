@@ -1,97 +1,43 @@
-// import AdbIcon from '@material-ui/icons/Adb';
-import { useState } from "react";
-
-
-import {
-  AppBar,
-  Container,
-  Toolbar,
-  Typography,
-  Box,
-  Tooltip,
-  IconButton,
-  Button,
-} from "@mui/material";
+import React, { useContext } from "react";
+import { Context } from "../../global/Context";
+import { Toolbar, Button } from "@mui/material";
+import AdbIcon from "@mui/icons-material/Adb";
+import { goToFeedPage, goToLogin } from "../../routes/coordinatos";
 import { useNavigate } from "react-router-dom";
-import { goToLogin } from "../../routes/coordinatos";
-// import AdbIcon from '@material-ui/icons/Adb';
+import * as S from "./styled";
 
 export function Header() {
+  const token = localStorage.getItem('token')
   const navigate = useNavigate;
-  const token = localStorage.getItem("token");
-  const [rightButtonText, setRightButtonText] = useState(
-    token ? "Logout" : "Login"
-  );
+
+  const dados = useContext(Context);
+ 
+
 
   const logout = () => {
     localStorage.removeItem("token");
   };
 
   const rightButtonAction = () => {
-    if (token) {
+    if (dados.token) {
       logout();
-      setRightButtonText('Login')
-      goToLogin(navigate)
-    }else{
-      goToLogin(navigate)
+      dados.state.setRightButtonText("Login");
+      goToLogin(navigate);
+    } else {
+      goToLogin(navigate);
     }
   };
 
   return (
-    <AppBar color="secondary" position="static">
-      <Container maxWidth="xl">
-        <Toolbar disableGutters>
-          <Typography
-            variant="h6"
-            noWrap
-            component="a"
-            // href="/"
-            sx={{
-              mr: 2,
-              display: { xs: "none", md: "flex" },
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            {/* <AdbIcon /> */}
-            Labenu
-          </Typography>
-
-          <Box sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
-          <Typography
-            variant="h5"
-            noWrap
-            component="a"
-            href=""
-            sx={{
-              mr: 2,
-              display: { xs: "flex", md: "none" },
-              flexGrow: 1,
-              fontFamily: "monospace",
-              fontWeight: 700,
-              letterSpacing: ".3rem",
-              color: "inherit",
-              textDecoration: "none",
-            }}
-          >
-            Labenu
-          </Typography>
-          <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}></Box>
-
-          <Box sx={{ flexGrow: 0 }}>
-            <Tooltip title="Open settings">
-              <IconButton sx={{ p: 0 }}>
-                <Button onClick={rightButtonAction}>
-                  {rightButtonText}
-                </Button>
-              </IconButton>
-            </Tooltip>
-          </Box>
-        </Toolbar>
-      </Container>
-    </AppBar>
+    <S.Nav position="static" color="secondary">
+      <Toolbar>
+        <S.Logo onClick={() => goToFeedPage(navigate)}>
+          <AdbIcon />
+          <p> LABENU</p>
+        </S.Logo>
+        <Button onClick={rightButtonAction}>{dados.state.rightButtonText}</Button>
+        {/* <Button onClick={() => goToLogin(navigate)}>Entrar</Button> */}
+      </Toolbar>
+    </S.Nav>
   );
 }

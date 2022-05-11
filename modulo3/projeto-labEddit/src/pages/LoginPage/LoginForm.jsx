@@ -1,26 +1,34 @@
-import { TextField, FormControlLabel, Checkbox, Box } from "@mui/material";
+import React, { useContext } from "react";
+import GlobalStateContext from "../../global/GlobalStateContext";
+import {
+  TextField,
+  FormControlLabel,
+  Checkbox,
+  Box,
+  Button,
+} from "@mui/material";
 import { useForm } from "../../hooks/useForm";
 import { useNavigate } from "react-router-dom";
 import { login } from "../../services/user";
-import { useUnprotectedPage } from "../../hooks/useUnprotectedPage";
+import { goToSignUpPage } from "../../routes/coordinatos";
 
-export function LoginForm() {
-  useUnprotectedPage();
-  const navigate = useNavigate();
-
+export function LoginForm() {  
   const { form, onChange, clear } = useForm({
     email: "",
     password: "",
   });
+  const navigate = useNavigate();
+
+  const data = useContext(GlobalStateContext);
 
   //ANCHOR POST LOGIN
-  const handleSubmit = (event) => {
+  const onSubmitForm = (event) => {
     event.preventDefault();
-    login(form, clear, navigate);
+    login(form, clear, navigate, data.states.setRightButtonText);
   };
 
   return (
-    <Box onSubmit={handleSubmit} component="form" sx={{ mt: 1 }}>
+    <Box onSubmit={onSubmitForm} component="form" sx={{ mt: 1 }}>
       <TextField
         name={"email"}
         value={form.email}
@@ -47,6 +55,26 @@ export function LoginForm() {
         control={<Checkbox value="remember" color="primary" />}
         label="Remember me"
       />
+
+      <Button
+        type={"submit"}
+        fullWidth
+        variant={"contained"}
+        sx={{ mt: 3, mb: 2 }}
+      >
+        Continuar
+      </Button>
+
+      <Button
+        onClick={() => goToSignUpPage(navigate)}
+        type={"submit"}
+        fullWidth
+        variant={"outlined"}
+        color={"primary"}
+        sx={{ mb: 2 }}
+      >
+        Criar uma conta
+      </Button>
     </Box>
   );
 }

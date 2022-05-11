@@ -1,4 +1,15 @@
-import { TextField, Grid, Box } from "@mui/material";
+
+import React, { useContext } from "react";
+import GlobalStateContext from "../../global/GlobalStateContext";
+import {
+  TextField,
+  Grid,
+  Box,
+  Typography,
+  FormControlLabel,
+  Checkbox,
+  Button,
+} from "@mui/material";
 
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage";
 import { signUp } from "../../services/user";
@@ -8,21 +19,22 @@ import { useNavigate } from "react-router-dom";
 export function SignUpForm() {
   useUnprotectedPage();
   const navigate = useNavigate();
-
   const { form, onChange, clear } = useForm({
     userName: "",
     email: "",
     password: "",
   });
 
+  const data = useContext(GlobalStateContext);
+
   //ANCHOR POST SIGNUP
-  const handleSubmit = (event) => {
+  const onSubmitForm = (event) => {
     event.preventDefault();
-    signUp(form, clear, navigate);
+    signUp(form, clear, navigate,data.states.setRightButtonText);
   };
 
   return (
-    <Box onSubmit={handleSubmit} component="form" noValidate sx={{ mt: 5 }}>
+    <Box onSubmit={onSubmitForm} component="form" noValidate sx={{ mt: 5 }}>
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField
@@ -39,13 +51,13 @@ export function SignUpForm() {
 
         <Grid item xs={12}>
           <TextField
-            name={"email"}
             value={form.email}
+            name={"email"}
             onChange={onChange}
+            label={"E-mail"}
             required
             fullWidth
             id="email"
-            label={"E-mail"}
             autoComplete="email"
           />
         </Grid>
@@ -60,6 +72,30 @@ export function SignUpForm() {
             type="password"
             autoComplete="new-password"
           />
+        </Grid>
+
+        <Grid container    item xs={12}>
+          <Grid item xs={12}>
+            <Typography variant="caption">
+              {
+                "Ao continuar, você concorda com o nosso Contrato de usuário e nossa Política de Privacidade"
+              }
+            </Typography>
+
+            <FormControlLabel
+              control={<Checkbox value="allowExtraEmails" color="primary" />}
+              label="Eu concordo em receber emails sobre coisas legais no Labeddit"
+            />
+          </Grid>
+
+          <Button
+            type="submit"
+            fullWidth
+            variant="contained"
+            sx={{ mt: 3, mb: 2 }}
+          >
+            Cadastrar
+          </Button>
         </Grid>
       </Grid>
     </Box>
