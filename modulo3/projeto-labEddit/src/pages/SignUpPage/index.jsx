@@ -3,13 +3,31 @@ import {
   Typography,
   Container,
 } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { useForm } from "../../hooks/useForm";
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage";
-// import { useNavigate } from "react-router-dom";
 import { SignUpForm } from "./SignUpForm";
+import { LoginAction } from "../../services/user";
+
+
 
 export function SignUpPage() {
   useUnprotectedPage();
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
+
+  const { form, onChange, clear } = useForm({
+    userName: "",
+    email: "",
+    password: "",
+  });
+
+  const [state,signUpPage] = LoginAction(form,clear,navigate)
+
+   //ANCHOR POST SIGNUP
+   const OnSubmitRegister = (event) => {
+    event.preventDefault();
+    signUpPage();
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -25,7 +43,12 @@ export function SignUpPage() {
           Olá, boas vindas ao LabEddit ;)
         </Typography>
 
-        <SignUpForm />
+        <SignUpForm 
+        onSubmitForm = {OnSubmitRegister}
+        form={form}
+        onChange={onChange}
+        state={state}
+        />
       </Box>
     </Container>
   );

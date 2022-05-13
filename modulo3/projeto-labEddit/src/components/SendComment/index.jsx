@@ -1,6 +1,6 @@
 import { Button, TextareaAutosize } from "@mui/material";
 import * as S from './styled'
-import { FeedItem } from "../FeedItem";
+import { FeedItem } from "../FormPost";
 
 export default function SendComment() {
   return (

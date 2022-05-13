@@ -9,11 +9,11 @@ import ArrowCircleUpIcon from "@mui/icons-material/ArrowCircleUp";
 import ArrowCircleDownIcon from "@mui/icons-material/ArrowCircleDown";
 import MailOutlineIcon from "@mui/icons-material/MailOutline";
 
-export function FeedItem() {
+export function FormPost(props) {
   return (
+    <form onSubmit={props.submitPost}>
     <Card sx={{ maxWidth: 345 }}>
       <CardContent>
-
 				<Typography variant="caption" >
 				Enviado por: labaluno83 
 				</Typography>
@@ -35,5 +35,6 @@ export function FeedItem() {
         </IconButton>
       </CardActions>
     </Card>
+    </form>
   );
 }

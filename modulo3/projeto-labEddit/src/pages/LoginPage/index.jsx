@@ -1,15 +1,27 @@
-
+import { useNavigate } from "react-router-dom";
+import { useForm } from "../../hooks/useForm";
 import { Box, Typography, Container } from "@mui/material";
 import logo from "../../assets/logo.png";
-import { useNavigate } from "react-router-dom";
 import { useUnprotectedPage } from "../../hooks/useUnprotectedPage";
+import { LoginAction } from "../../services/user";
 import { LoginForm } from "./LoginForm";
+
 
 export function LoginPage() {
   useUnprotectedPage();
   const navigate = useNavigate();
 
-  
+  const { form, onChange, clear } = useForm({
+    email: "",
+    password: "",
+  });
+  const [state, loginPage] = LoginAction(form, clear, navigate);
+
+  //ANCHOR POST LOGIN
+  const onSubmitLogin = (event) => {
+    event.preventDefault();
+    loginPage();
+  };
 
   return (
     <Container component="main" maxWidth="xs">
@@ -27,7 +39,12 @@ export function LoginPage() {
           LabEddit
         </Typography>
 
-        <LoginForm />
+        <LoginForm
+          onSubmitForm={onSubmitLogin}
+          form={form}
+          onChange={onChange}
+          state={state}
+        />
       </Box>
     </Container>
   );

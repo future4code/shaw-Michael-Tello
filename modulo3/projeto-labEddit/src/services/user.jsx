@@ -1,43 +1,40 @@
 import axios from "axios";
+import { useState } from "react";
 import { BASE_URL } from "../constants/url";
-import { goToFeedPage } from "../routes/coordinatos";
 
 
-export const  login = (body,clear,navigate, setRightButtonText) => {
+
+export const LoginAction = (form,clear,navigate) => {
+const [state,setState] = useState(true)
+
+// SECTION
+  const  loginPage = () => {
 	axios
-		.post(`${BASE_URL}/users/login`, body)
+		.post(`${BASE_URL}/users/login`, form)
 		.then((res) => {
 			localStorage.setItem("token", res.data.token);
 			clear();
-			goToFeedPage(navigate)
-			setRightButtonText('Logout')
+			navigate("/feed");
 		})
 		.catch((err) => {
+			setState(false);
 			alert("Erro no Login");
 		});
 };
 
-export const signUp = (body,clear,navigate,setRightButtonText) => {
-	axios.post(`${BASE_URL}/users/signup`, body)
+// SECTION
+  const signUpPage = () => {
+	axios.post(`${BASE_URL}/users/signup`, form)
 	.then((res)=>{
 localStorage.setItem('token',res.data.token)
 clear()
-goToFeedPage(navigate)
-setRightButtonText('Logout')
+navigate("/");
 	})
 	.catch((err)=>{
 		alert('Erro no Cadastro')
 	})
 }
 
-// useEffect(()=>{
-// axios.post(url)
-// .then((resposta) => {
-// 	setData(resposta.data);
-// })
-// .catch((erro) => {
-// 	console.log(erro);
-// });
-// }, [url]);
 
-// })
+return [state, loginPage,signUpPage]; 
+}

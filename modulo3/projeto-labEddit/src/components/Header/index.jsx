@@ -1,31 +1,15 @@
-import React, { useContext } from "react";
-import { Context } from "../../global/Context";
 import { Toolbar, Button } from "@mui/material";
 import AdbIcon from "@mui/icons-material/Adb";
-import { goToFeedPage, goToLogin } from "../../routes/coordinatos";
+import { goToFeedPage, goToLoginPage } from "../../routes/coordinatos";
 import { useNavigate } from "react-router-dom";
 import * as S from "./styled";
 
 export function Header() {
-  const token = localStorage.getItem('token')
   const navigate = useNavigate;
 
-  const dados = useContext(Context);
- 
-
-
-  const logout = () => {
+  const Logout = () => {
     localStorage.removeItem("token");
-  };
-
-  const rightButtonAction = () => {
-    if (dados.token) {
-      logout();
-      dados.state.setRightButtonText("Login");
-      goToLogin(navigate);
-    } else {
-      goToLogin(navigate);
-    }
+    navigate("/");
   };
 
   return (
@@ -35,8 +19,9 @@ export function Header() {
           <AdbIcon />
           <p> LABENU</p>
         </S.Logo>
-        <Button onClick={rightButtonAction}>{dados.state.rightButtonText}</Button>
-        {/* <Button onClick={() => goToLogin(navigate)}>Entrar</Button> */}
+
+        <Button onClick={Logout}>Logout</Button>
+       
       </Toolbar>
     </S.Nav>
   );
