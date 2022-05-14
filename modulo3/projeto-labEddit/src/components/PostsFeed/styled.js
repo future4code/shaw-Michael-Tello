@@ -4,9 +4,11 @@ export const CardFeedPost = styled.div`
   margin-bottom: 10%;
   margin-top: 2%;
   width: 80%;
+  background: white;
 
-  b{
-    color: green;
+  i{
+    color: #f89b29;
+    font-weight: 700;
   }
 `
 

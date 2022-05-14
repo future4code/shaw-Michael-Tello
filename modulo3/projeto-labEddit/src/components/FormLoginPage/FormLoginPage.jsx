@@ -1,7 +1,6 @@
 import { TextField, Box, Button, Alert, Typography } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { goToSignUpPage } from "../../routes/coordinator";
-// import { DivLogin } from "../../pages/LoginPage/styled";
 
 export default function FormLoginPage(props) {
   const state = props.state;
@@ -10,13 +9,14 @@ export default function FormLoginPage(props) {
   return (
     <>
       {!state && <Alert severity="error">Usuário não encontrado</Alert>}
-      <Box onSubmit={props.OnSubmitLogin} component="form" sx={{ mt: 1 }}>
-        <Typography variant="h5" textAlign={"center"}>
+      <Box onSubmit={props.OnSubmitLogin} 
+      component="form" 
+      sx={{ mt: 1 }}>
+        <Typography variant="h5" textAlign={"center"} color={"primary"}>
           Faça seu login
         </Typography>
 
         <TextField
-         
           type={"email"}
           name={"email"}
           value={props.form.email}
@@ -50,11 +50,11 @@ export default function FormLoginPage(props) {
         </Button>
 
         <Button
-          onClick={() => goToSignUpPage(navigate)}
           type={"submit"}
           fullWidth
           variant={"outlined"}
           color={"secondary"}
+          onClick={() => goToSignUpPage(navigate)}
           sx={{ mb: 2 }}
         >
           Cadastre-se

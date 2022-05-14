@@ -1,14 +1,14 @@
-import { useNavigate } from 'react-router-dom';
-import {TitleNav} from './styled'
+import { Button } from "@mui/material";
+import { useNavigate } from "react-router-dom";
+import { TitleNav } from "./styled";
 
 export default function NavBar() {
-
-    const navigate = useNavigate();
+  const navigate = useNavigate();
 
   const Logout = () => {
-     localStorage.removeItem('token');
-     navigate('/');
-  }
+    localStorage.removeItem("token");
+    navigate("/");
+  };
 
   return (
     <nav className="navbar navbar-dark bg-dark">
@@ -16,7 +16,9 @@ export default function NavBar() {
         <span>LabEddit</span>
         <i className="bi bi-chat-quote"></i>
       </TitleNav>
-      <button className="btn btn-sm btn-outline-secondary" onClick={Logout}>Logout</button>
+      <Button variant="contained" size="small" onClick={Logout}>
+        Logout
+      </Button>
     </nav>
   );
 }

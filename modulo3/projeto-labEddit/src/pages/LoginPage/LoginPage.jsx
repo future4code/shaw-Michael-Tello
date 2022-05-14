@@ -7,6 +7,10 @@ import { LoginAction } from "./request";
 import FormLoginPage from "../../components/FormLoginPage/FormLoginPage";
 import styled from "styled-components";
 
+// import axios from "axios";
+// import { BaseURL } from "../../constants/BaseURL";
+// import { goToFeedPage } from "../../routes/coordinator";
+
 const DivApp = styled.div`
   display: flex;
   justify-content: center;
@@ -28,6 +32,8 @@ export default function LoginPage() {
     loginPage();
   };
 
+ 
+  
   return (
     <DivApp>
       <Container component="main" maxWidth="xs">

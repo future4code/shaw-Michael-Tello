@@ -55,9 +55,7 @@ export default function FeedPage() {
         />
         <PaginationCount 
         GetPostsAtt={GetPostsAtt}
-        
         />
-       
         <PostsFeed
           loading={loading}
           arrPosts={arrPosts}

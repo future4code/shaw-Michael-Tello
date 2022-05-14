@@ -1,5 +1,5 @@
 import axios from "axios";
-import { useEffect, useState } from "react";
+import {  useState } from "react";
 import { BaseURL } from "../../constants/BaseURL";
 
 
@@ -7,11 +7,7 @@ import { BaseURL } from "../../constants/BaseURL";
 
     const [state, setState] = useState(true);
 
-    // useEffect(()=>{
-    //   loginPage();
-    // },[])
-
-
+// SECTION
 const loginPage = () => {
 
   axios
@@ -30,9 +26,21 @@ const loginPage = () => {
         clear();
         console.log(err);
       });
+}
 
+// SECTION
+const signUpPage = () => {
+	axios.post(`${BaseURL}/users/signup`, form)
+	.then((res)=>{
+localStorage.setItem('token',res.data.token)
+clear()
+navigate("/");
+	})
+	.catch((err)=>{
+		alert('Erro no Cadastro')
+	})
 }
     
 
-      return [state, loginPage]; 
+      return [state, loginPage,signUpPage]; 
   };

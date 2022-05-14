@@ -23,53 +23,17 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 - [React](https://pt-br.reactjs.org/)
 - [Styled-Components](https://styled-components.com/)
-
+- [Material-UI](https://v4.mui.com)
 
 **## 💻 Projeto**
-
+O labeddit é um site de login usado para registrar o usuario e postar comentarios dando likes e deslikes.
 
 
 **## 👀 Surge**
 
-Você pode visualizar o site  através [desse link]()
+Você pode visualizar o site  através [desse link](http://labeddit-michaelsoto.surge.sh)
 
-**## ✍ Layout**
 
-Você pode visualizar o layout do projeto através [desse link]()
-
-**## 🚀 Como executar**
-
-Clonar o repositorio:
-
-```
-
-$ git clone <>
-
-```
-
-Acessar o repertório:
-
-```
-
-$ cd Shaw-pokedex7 
-
-```
-
-Instalar as dependências:
-
-```
-
-$ npm install
-
-```
-
-Iniciar o projeto:
-
-```
-
-$ npm start
-
-```
 
 **## ✒️ Authors**
 
